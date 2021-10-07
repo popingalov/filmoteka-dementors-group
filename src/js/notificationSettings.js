@@ -1,4 +1,4 @@
-import * as PNotifyMobile from '@pnotify/mobile/';
+/* import * as PNotifyMobile from '@pnotify/mobile/';
 import * as PNotifyCountdown from '@pnotify/countdown';
 import { defaultModules } from '@pnotify/core';
 defaultModules.set(PNotifyMobile, {});
@@ -34,3 +34,4 @@ export default {
     modules: new Map([...defaultModules, [PNotifyCountdown, {}]]),
   },
 };
+ */
