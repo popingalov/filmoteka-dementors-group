@@ -1,1 +1,3 @@
-console.log('hello');
+import './sass/main.scss';
+//import './js/theme';
+//import './js/header';

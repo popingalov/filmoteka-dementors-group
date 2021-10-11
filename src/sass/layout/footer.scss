@@ -1,0 +1,57 @@
+.footer__container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.17;
+  padding-top: 30px;
+  padding-bottom: 28px;
+  background-color: #f7f7f7;
+  min-width: 1024px;
+  height: 77px;
+}
+
+@media screen and (max-width: 1023px) {
+  .footer__container {
+    min-width: 768px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__container {
+    font-size: 14px;
+    display: block;
+    padding-top: 29px;
+    padding-bottom: 30px;
+    min-width: 320px;
+    height: 100px;
+  }
+
+  .footer__rights {
+    margin-bottom: 10px;
+  }
+}
+
+.footer__rights {
+  margin-right: 3px;
+}
+
+.footer__develops {
+  display: flex;
+  justify-content: center;
+
+  & .material-icons {
+    font-size: 18px;
+    color: var(--color-accent);
+  }
+}
+
+.button-team {
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: inherit;
+  border: transparent;
+  outline: none;
+
+  color: var(--color-accent);
+}
