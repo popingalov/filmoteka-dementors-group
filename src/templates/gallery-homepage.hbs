@@ -1,0 +1,10 @@
+{{#each this}}
+<li class="gallery_card">
+    <img class="gallery_img" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{poster_path}}" alt="{{title}}"
+        width="280" height="400" />
+    <h2 class="gallery_title">{{title}}</h2>
+    <div class="label">
+        <span class="gallery_label">{{genres.name}}</span> | <span class="gallery_label">{{release_date}}</span>
+    </div>
+</li>
+{{/each}}
