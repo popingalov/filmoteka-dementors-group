@@ -1,0 +1,273 @@
+.page-header {
+  padding-top: 40px;
+  background-color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 46px;
+  box-shadow: 0px 5px 14px 2px rgb(0 0 0 / 55%);
+  height: 230px;
+
+  @media screen and (min-width: 768px) {
+  }
+}
+
+.page-header--home {
+  @media screen and (max-width: 320px) {
+    background-image:
+    //linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/home-h-mob@2x.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image:
+      //linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/home-h-mob@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 768px) {
+    background-image:
+    //linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/home-h-tab.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image:
+      //linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/home-h-tab@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/home-h-desk.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/home-h-desk@2x.jpg);
+    }
+  }
+}
+
+.page-header--library {
+  @media screen and (max-width: 320px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/library-h-mob.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/library-h-mob@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 768px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/library-h-tab.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/library-h-tab@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/library-h-desk.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/library-h-desk@2x.jpg);
+    }
+  }
+}
+
+.page-header__wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+// NAV
+
+.site-nav {
+  display: flex;
+  flex-grow: 1;
+  align-items: baseline;
+  margin-right: 30px;
+
+  @media screen and (max-width: 767px) {
+    margin-right: 16px;
+  }
+}
+
+.site-nav__list {
+  display: flex;
+}
+
+.site-nav__item {
+  &:not(:last-child) {
+    margin-right: 40px;
+
+    @media screen and (max-width: 767px) {
+      margin-right: 16px;
+    }
+  }
+}
+
+.site-nav__button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  border: none;
+
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #ffffff;
+
+  &:not(.site-nav__button--current):hover {
+    color: #ff6b01;
+  }
+}
+
+.site-nav__button--current {
+  cursor: default;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    width: 100%;
+    height: 3px;
+
+    background-color: #ff6b01;
+  }
+}
+
+// form
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px 0 0;
+  min-width: 280px;
+}
+
+.search-field {
+  width: 100%;
+  border: 0;
+  border-bottom: 0.5px solid white;
+  outline: 0;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form-label {
+    font-size: 18px;
+    cursor: text;
+    top: 10px;
+  }
+}
+
+.form-label {
+  position: absolute;
+  top: -15px;
+  display: block;
+  transition: 0.2s;
+  color: red;
+}
+
+.search-field:focus {
+  ~ .form-label {
+    position: absolute;
+    top: -20px;
+    display: block;
+    transition: 0.2s;
+    font-size: 18px;
+    color: red;
+  }
+  padding-bottom: 6px;
+  font-weight: 500;
+  border-width: 2px;
+  border-image: linear-gradient(to right, blue, #ff001b);
+  border-image-slice: 1;
+}
+
+.search-btn {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: transparent;
+  fill: white;
+  color: #ff001b;
+  scale: 1;
+  transition: scale 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    scale: 1.3;
+  }
+}
+
+.button {
+  width: 130px;
+  height: 44px;
+
+  border: 1px solid;
+  border-radius: 4px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  background-color: transparent;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  transition: color 250ms var(--timing-function), border-color 250ms var(--timing-function);
+
+  &:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  &--active {
+    border: none;
+    background-color: var(--color-accent);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+/////
