@@ -37,7 +37,7 @@ class FilmsApiProg {
         try{
         const filmesFox = await axios.get(`${this.filmURL}/movie/${traing}/videos?api_key=${this.key}&language=en-US`);
         const traingData = filmesFox.data;
-        const traingFilm = `https://www.youtube.com/watch?v=${traingData[0].key}`;
+        const traingFilm = `https://www.youtube.com/watch?v=${traingData[0],key}`;
         return traingFilm;
         } catch (error){
         console.log(error);
