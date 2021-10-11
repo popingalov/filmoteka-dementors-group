@@ -1,0 +1,85 @@
+<header class="page-header page-header--home js-page-header">
+  <div class="container">
+    <div class="page-header__wrapper">
+      <nav class="site-nav">
+        <a class="logo js-logo">
+          <svg width="24" height="24">
+            <use href="./images/icons.svg#icon-logo"></use>
+          </svg>
+          <span class="logo__title">Filmoteka</span>
+        </a>
+        <ul class="site-nav__list js-navigation-list">
+          <li class="site-nav__item">
+            <button
+              class="site-nav__button site-nav__button--current"
+              data-button="home"
+              type="button"
+            >
+              Home
+            </button>
+          </li>
+          <li class="site-nav__item">
+            <button class="site-nav__button" data-button="library" type="button">My library</button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="form">
+        <form class="search-form" id="search-form">
+          <input
+            type="text"
+            name="query"
+            autocomplete="off"
+            placeholder="Поиск фильмов"
+            class="search-field"
+            id="name"
+          />
+          <label class="form-label" for="name">Search Movies</label>
+          <button type="submit" class="search-btn">
+            <svg class="search-icon" width="12" height="12">
+              <use href="/images/icons.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Разметка переключателя темы -->
+        <div class="theme-switch">
+          <div class="theme-switch__control">
+            <input
+              class="theme-switch__toggle"
+              type="checkbox"
+              name="theme"
+              id="codepen"
+              aria-label="Переключить между тёмной и светлой темой"
+            />
+            <label aria-hidden="true" class="theme-switch__track" for="codepen">
+              <div class="theme__icon">
+                <span
+                  ><svg type="image/svg+xml" class="sunny__icon">
+                    <use
+                      type="image/svg+xml"
+                      class=""
+                      alt="icon-moon"
+                      href="./images/icons.svg#icon-moon"
+                    ></use>
+                  </svg>
+                </span>
+                <span>
+                  <svg type="image/svg+xml" class="sunny__icon">
+                    <use
+                      type="image/svg+xml"
+                      class=""
+                      alt="icon-sunny"
+                      href="./images/icons.svg#icon-sunny"
+                    ></use>
+                  </svg>
+                </span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Добавить авторизацию -->
+  </div>
+</header>
