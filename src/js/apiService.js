@@ -4,6 +4,7 @@ class FilmsApiProg {
   constructor(key) {
     this.filmURL = 'https://api.themoviedb.org/3';
     this.key = key;
+    this.searchQuery = '';
   }
 
   async getSearchFilms() {
