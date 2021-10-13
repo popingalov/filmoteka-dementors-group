@@ -1,4 +1,4 @@
-/* import * as PNotifyMobile from '@pnotify/mobile/';
+import * as PNotifyMobile from '@pnotify/mobile/';
 import * as PNotifyCountdown from '@pnotify/countdown';
 import { defaultModules } from '@pnotify/core';
 defaultModules.set(PNotifyMobile, {});
@@ -12,15 +12,14 @@ export default {
   },
   incorrectQuery: {
     type: 'error',
-    title: 'Not found images',
-    text: 'Please, enter correct query',
+    title: 'Please, enter correct query!',
     delay: 3000,
     width: '300px',
     modules: new Map([...defaultModules, [PNotifyCountdown, {}]]),
   },
   notMachResults: {
     type: 'error',
-    title: 'Not found images',
+    title: 'Not found results!',
     text: 'Please, enter query',
     delay: 3000,
     width: '300px',
@@ -34,4 +33,3 @@ export default {
     modules: new Map([...defaultModules, [PNotifyCountdown, {}]]),
   },
 };
- */
