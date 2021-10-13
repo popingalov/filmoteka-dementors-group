@@ -7,3 +7,12 @@
 6.MY LIBRARY
 
 */
+export default {
+  searchForm: document.querySelector('#search-form'),
+  gallery: document.querySelector('.gallery'),
+  themeSwitch: document.querySelector('.theme-switch__control'),
+  homeBtn: document.querySelector('[data-button="home"]'),
+  libraryBtn: document.querySelector('[data-button="library"]'),
+  logo: document.querySelector('.js-logo'),
+  teamBtn: document.querySelector('.button-team'),
+};
