@@ -1,15 +1,33 @@
 import apiService from './apiService';
 import refs from './refs';
-refs.searchInput.addEventListener('change', onSearch);
+import testHbs from '../templates/gallery-homepage.hbs';
+
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/mobile/dist/PNotifyMobile.css';
+import '@pnotify/countdown/dist/PNotifyCountdown.css';
+import { alert } from '@pnotify/core';
+import notificationOptions from './notificationSettings.js';
+
+refs.searchForm.addEventListener('submit', onSearch);
 
 function onSearch(event) {
   event.preventDefault();
-  console.log(event.target.value);
-  const form = event.target.value;
-  apiService.searchQuery = form;
+  apiService.searchQuery = refs.searchInput.value;
   if (apiService.searchQuery.trim() !== '') {
     apiService.getSearchFilms();
     refs.searchForm.reset();
+    refs.gallery.innerHTML = '';
+    markupQuery();
+  } else {
+    return alert(notificationOptions.incorrectQuery);
+  }
+}
+async function markupQuery() {
+  const tryThis = await apiService.getSearchFilms();
+  refs.gallery.insertAdjacentHTML('beforeend', testHbs(tryThis.results));
+  if (tryThis.total_results === 0) {
+    return alert(notificationOptions.notMachResults);
   }
 }
 
