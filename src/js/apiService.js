@@ -6,6 +6,19 @@ class FilmsApiProg {
     this.key = key;
   }
 
+  async getSearchFilms() {
+    try {
+      const filmesFox = await axios.get(
+        `${this.filmURL}/search/movie?api_key=${this.key}&query=${this.searchQuery}`,
+      );
+      const findFilms = filmesFox.data;
+      console.log(filmesFox.data);
+      return findFilms;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async getTrend() {
     try {
       const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}`);
