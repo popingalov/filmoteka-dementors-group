@@ -86,11 +86,17 @@ body.dark-theme {
   display: flex;
   justify-content: flex-end;
   padding: 16px 24px;
+
+  @media screen and (min-width: 767px) {
+    top: 150px;
+  }
 }
+
 .theme-switch__control {
   display: flex;
   align-items: center;
 }
+
 .theme-switch__toggle {
   display: none;
 }
@@ -103,7 +109,7 @@ body.dark-theme {
   margin-left: 2px;
   height: 17px;
   width: 17px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 767px) {
     height: 25px;
     width: 25px;
   }
@@ -122,7 +128,7 @@ body.dark-theme {
   transition: all 500ms ease;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2) inset;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 767px) {
     width: 64px;
     height: 32px;
     background-size: ((64px * 2) + 50) 100%;
@@ -147,7 +153,7 @@ body.dark-theme {
     text-transform: uppercase;
     transition: left 500ms ease, color 500ms ease, transform 150ms ease;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 767px) {
       width: 26px;
       height: 26px;
       left: 2px;
@@ -163,14 +169,14 @@ body.dark-theme {
 }
 .theme-switch__toggle:checked + label {
   background-position-x: -(42px + 50);
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 767px) {
     background-position-x: -(64px + 50);
   }
   &:before {
     content: '';
     color: #007177;
     left: (42px - 16px - 1px);
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 767px) {
       left: (64px - 26px - 2px);
     }
   }
@@ -181,7 +187,7 @@ body.dark-theme {
   width: 15px;
   margin-right: 4px;
   margin-left: 4px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 767px) {
     height: 30px;
     width: 30px;
     margin-right: 8px;
