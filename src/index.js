@@ -8,7 +8,7 @@ console.log(apiService.getTrend());
 const gallery = document.querySelector('.gallery');
 console.log(gallery);
 
-async function testRender() {
+export default async function testRender() {
   const tryThis = await apiService.getTrend();
   gallery.insertAdjacentHTML('beforeend', testHbs(tryThis.results));
 }

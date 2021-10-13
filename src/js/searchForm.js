@@ -1,11 +1,12 @@
 import apiService from './apiService';
 import refs from './refs';
-refs.searchForm.addEventListener('submit', onSearch);
+refs.searchInput.addEventListener('change', onSearch);
 
 function onSearch(event) {
   event.preventDefault();
-  const form = event.currentTarget;
-  apiService.searchQuery = form.elements.query.value;
+  console.log(event.target.value);
+  const form = event.target.value;
+  apiService.searchQuery = form;
   if (apiService.searchQuery.trim() !== '') {
     apiService.getSearchFilms();
     refs.searchForm.reset();
