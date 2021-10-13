@@ -2,7 +2,7 @@ import './sass/main.scss';
 /* import './js/theme.js'; */
 import apiService from './js/apiService.js';
 import testHbs from './templates/gallery-homepage.hbs';
-import './js/teamModal.js'
+import './js/forTeamModal.js'
 /* const apiService = new ApiService(); */
 console.log(apiService.getTrend());
 const gallery = document.querySelector('.gallery');
