@@ -118,4 +118,3 @@ export default new FilmsApiProg('7c9dd50606a07df965d51fc9621e1448');
 //     this.searchQuery = newQuery;
 //   }
 // }
- 
