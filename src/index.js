@@ -3,6 +3,7 @@ import searchQuery from './js/searchForm.js';
 /* import './js/theme.js'; */
 import apiService from './js/apiService.js';
 import testHbs from './templates/gallery-homepage.hbs';
+import modal from './js/modal'
 /* const apiService = new ApiService(); */
 console.log(apiService.getTrend());
 const gallery = document.querySelector('.gallery');

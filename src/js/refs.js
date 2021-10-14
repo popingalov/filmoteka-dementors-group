@@ -16,4 +16,7 @@ export default {
   libraryBtn: document.querySelector('[data-button="library"]'),
   logo: document.querySelector('.js-logo'),
   teamBtn: document.querySelector('.button-team'),
+  closeBtnModal: document.querySelector('.modal__button-close'),
+  modal: document.querySelector('div[data-modal]'),
+
 };
