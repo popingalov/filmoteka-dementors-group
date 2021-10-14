@@ -12,6 +12,7 @@
   width: 100%;
   height: 100%;
   z-index: 98;
+  padding: 20px;
   overflow-y: scroll;
   background-color: var(--backdrop-color);
   transition: opacity var(--transition-function) var(--timing-function);
