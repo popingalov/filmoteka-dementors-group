@@ -1,5 +1,9 @@
 import './sass/main.scss';
-/* import './js/theme.js'; */
+import searchQuery from './js/searchForm.js';
+
+//import './js/most-populary.js';
+//import './js/theme.js';
+
 import apiService from './js/apiService.js';
 import testHbs from './templates/gallery-homepage.hbs';
 /* const apiService = new ApiService(); */

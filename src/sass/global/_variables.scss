@@ -2,9 +2,19 @@
   --color-accent: #ff6b01;
   --color-error: #ff001b;
   --color-title: #8c8c8c;
+  --color-white: #ffffff;
 
   // --color-light: #f7f7f7;
   // --color-dark: #545454;
 
-  //$timing-function: ease-in-out;
+  //  --timing-function: ease-in-out;
+
+  --transition-function: 250ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --backdrop-color: rgba(12, 10, 32, 0.719);
+  --shadow-off: inset rgba(255, 255, 255, 0.2) 8px 8px 25px 5px,
+    inset rgba(0, 0, 0, 0.5) -8px -8px 18px 5px;
+  --shadow-on: inset rgba(0, 0, 0, 0.5) 8px 8px 18px 5px,
+    inset rgba(255, 255, 255, 0.295) -8px -8px 18px 5px;
 }

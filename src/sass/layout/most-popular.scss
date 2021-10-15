@@ -1,0 +1,241 @@
+//пример
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+.swiper-wrapper {
+  display: inline-block;
+}
+
+.swiper-container {
+  min-width: 0;
+}
+.slider__wrapper .image-slider {
+  padding: 0;
+}
+.image-slider__wrapper {
+  display: block;
+}
+.image-slider__slide {
+  display: inline-flex;
+}
+.image-slider__image {
+  text-align: center;
+}
+.image-slider__image img {
+  max-width: 100%;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  right: 10px;
+  left: auto;
+  top: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 40px;
+  color: var(--color-accent);
+}
+
+//пагинация
+.image-slider .swiper-pagination {
+  bottom: 100px;
+}
+.image-slider .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  background-color: aqua;
+}
+
+//
+.title-slider {
+  color: var(--color-accent);
+  font-size: 30px;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px 0 yellow;
+  padding-bottom: 30px;
+  animation: pulsing 10s infinite;
+}
+
+@-webkit-keyframes pulsing {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.5, 0.5);
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.5, 0.5);
+  }
+}
+
+//наброски на проект
+
+/*@media screen and (max-width: 767px) {
+  .title-slider {
+    display: none;
+  }
+
+  .image-slider {
+    display: none;
+  }
+
+  .swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next {
+    display: none;
+  }
+
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .slider-wrapper {
+    padding-bottom: 20px;
+  }
+
+  .slider-wrapper.is-hidden {
+    display: none;
+  }
+
+  .image-slider__image img {
+    border-radius: 5px;
+    height: 252.5px;
+    object-fit: cover;
+  }
+
+  //поиграть
+ hover{
+  }
+//
+  .title-slider {
+
+    color: var(--color-accent);
+    font-size: 30px;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+    padding: 20px 0 20px 0;
+  }
+
+  .image-slider__image {
+    text-align: center;
+  }
+
+  .swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next {
+    left: 10px;
+    right: auto;
+    top: 50%;
+  }
+
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev {
+    right: 10px;
+    left: auto;
+    top: 50%;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 66px;
+    color: var(--color-accent);
+  }
+
+/////
+  .rating-slider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 18px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.1;
+    color: var(--color-white);
+    background-color: var(--color-accent);
+    border-radius: 5px;
+  }
+
+// трейлер
+
+  .overlay-btn
+ {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 35px;
+    width: 70px;
+    top: 110px;
+    left: 90px;
+    pointer-events: none;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-63%);
+    transition: all 400ms ease-in;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .overlay-btn
+ {
+      top: 93px;
+      left: 80px;
+    }
+
+    .image-slider__image img {
+      height: 222.5px;
+      object-fit: cover;
+    }
+  }
+
+  .swiper-wrapper:hover .overlay-btn
+ {
+    display: flex;
+    opacity: 1;
+    transform: translateX(-63%);
+  }
+
+  .btn-text-slider
+ {
+    position: absolute;
+    font-size: 16px;
+    color: var(--color-accent);
+    cursor: pointer;
+    margin: 0;
+    z-index: 5;
+  }
+
+  .swiper-slide {
+    transition: var(--transition-function) var(--timing-function);
+  }
+
+}
+*/
