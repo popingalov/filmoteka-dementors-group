@@ -24,7 +24,7 @@ class FilmsApiProg {
     try {
       const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}`);
       const trending = filmesFox.data;
-      return trending;
+      return trending
     } catch (error) {
       console.log(error);
     }
@@ -67,6 +67,20 @@ class FilmsApiProg {
       const filmesFox = await axios.get(`${this.filmURL}/movie/${film}?api_key=${this.key}`);
       const progThink = filmesFox.data;
       return progThink;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+        async getGenre() {
+    try {
+      const genreFilms = await axios.get(`${this.filmURL}/genre/movie/list?api_key=${this.key}`);
+      const genre = genreFilms.data
+      const { genres } = genre
+      this.result = {}
+      genres.forEach(({ id, name }) => {
+        this.result[id] = name
+      })
+      return (this.result);
     } catch (error) {
       console.log(error);
     }
