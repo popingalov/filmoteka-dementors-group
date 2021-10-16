@@ -50,25 +50,27 @@
     </script>
     <script>
         const windowSize = window.screen.width
-        console.log(windowSize);
         function slick (){
             if(windowSize >= 1024){$('.team_container').slick({
     
             infinite: true,
             slidesToShow: 3,
-            slidesToScroll: 3,
-            dots: true},)
+            slidesToScroll: 1,
+            dots: true,
+            autoplay: true},)
         }
         if(windowSize >= 768){
             $('.team_container').slick({
             infinite: true,
             slidesToShow: 2,
-            slidesToScroll: 2,
-            dots: true
+            slidesToScroll: 1,
+            dots: true,
+            autoplay: true
             });
         }else{
             $('.team_container').slick({
-                dots: true
+                dots: true,
+                autoplay: true
             });
         }
         }
