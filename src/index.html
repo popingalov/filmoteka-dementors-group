@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="" referrerpolicy="no-referrer">
+
 </head>
 
 <body>
@@ -28,9 +31,51 @@
     <include src="./partials/footer.html"></include>
 
     <!-- вставить скролл вверх -->
+    <include src="./partials/team-modal.html"></include>
 
-    <div class="backdrop is-hidden" data-modal></div>
+    <div class="backdrop is-hidden" data-modal>
+       <include src="./partials/modal.html"></include>
+    </div>
+    <!-- <include src="./partials/team-modal.html"></include> -->
+
     <include src="./partials/spiner.html"></include>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" 
+    integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script>
+        const windowSize = window.screen.width
+        function slick (){
+            if(windowSize >= 1024){$('.team_container').slick({
+    
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            dots: true,
+            autoplay: true},)
+        }
+        if(windowSize >= 768){
+            $('.team_container').slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            dots: true,
+            autoplay: true
+            });
+        }else{
+            $('.team_container').slick({
+                dots: true,
+                autoplay: true
+            });
+        }
+        }
+        slick()
+    </script>
     <script src="./index.js"></script>
 </body>
 
