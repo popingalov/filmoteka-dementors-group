@@ -39,6 +39,7 @@
     "jquery": "^3.6.0",
     "lodash.throttle": "^4.1.1",
     "notifyjs": "^3.0.0",
+    "swiper": "^7.0.8",
     "throttle": "^1.0.3",
     "throttle-debounce": "^3.0.1"
   }
