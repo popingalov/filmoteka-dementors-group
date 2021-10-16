@@ -6,9 +6,9 @@ const Theme = {
 };
 
 loadingThem();
-refs.switchToggle.addEventListener('change', chengeTheme);
+refs.switchToggle.addEventListener('change', changeTheme);
 
-function chengeTheme() {
+function changeTheme() {
   refs.body.classList.toggle(Theme.DARK);
   refs.body.classList.toggle(Theme.LIGHT);
 
