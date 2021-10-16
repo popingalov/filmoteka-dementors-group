@@ -1,4 +1,9 @@
 import refs from './refs';
+import apiService from './apiService';
+import filmCard from '../templates/film-modal.hbs'
+
+const modalWindow = document.querySelector('.modal')
+
 
 refs.gallery.addEventListener('click', onMovieClick);
 refs.modal.addEventListener('click', closeModal);
@@ -30,3 +35,12 @@ function modalCloseByEsc(e) {
     window.removeEventListener('keydown', modalCloseByEsc);
   }
 }
+
+const film = apiService.getBildFilm(610253)
+film.then(response => {
+  console.log(response);
+  modalWindow.insertAdjacentHTML('beforeend', filmCard(response))
+})
+
+
+

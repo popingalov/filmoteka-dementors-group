@@ -37,7 +37,6 @@ class RenderFilms {
     const films = response.results;
     return films;
   }
-
   // get trending films
   async getMovies(page) {
     const response = await fetchFilmClass.getTrending(page);
