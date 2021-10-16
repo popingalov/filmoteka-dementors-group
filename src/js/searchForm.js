@@ -8,7 +8,7 @@ import '@pnotify/mobile/dist/PNotifyMobile.css';
 import '@pnotify/countdown/dist/PNotifyCountdown.css';
 import { alert } from '@pnotify/core';
 import notificationOptions from './notificationSettings.js';
-import markupQuery from '../index';
+import { startRenderPromis } from '../index';
 refs.searchForm.addEventListener('submit', onSearch);
 
 function onSearch(event) {
@@ -18,7 +18,9 @@ function onSearch(event) {
     apiService.getSearchFilms();
     refs.searchForm.reset();
     refs.gallery.innerHTML = '';
-    markupQuery(apiService.getSearchFilms());
+    const mass = apiService.getSearchFilms();
+    console.log(mass);
+    startRenderPromis(mass);
   } else {
     return alert(notificationOptions.incorrectQuery);
   }

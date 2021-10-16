@@ -9,11 +9,45 @@ import './js/localStorage';
 import './js/filmsPagination';
 import modal from './js/modal';
 import './js/forTeamModal.js';
+import './js/mylibrary';
 /* const apiService = new ApiService(); */
 
 const gallery = document.querySelector('.gallery');
 
-export default async function startRender(mass) {
+/* function testOnTrue() {
+  const startMass = JSON.parse(localStorage.getItem('startRender'));
+
+  if (startMass.length === 0) {
+    const massTrend = apiService.getTrend();
+    localStorage.setItem('startRender', JSON.stringify(massTrend));
+    startRenderPromis(massTrend);
+
+    return;
+  }
+  startRender(startMass);
+}
+testOnTrue(); */
+
+async function startRender(mass) {
+  const massForRender = mass;
+  const tryGenres = await apiService.getGenre();
+  const genre = massForRender;
+  genre.forEach((e, i) => {
+    e.genre_ids.forEach((er, ir) => {
+      if (ir < 2) {
+        genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
+        return;
+      }
+      if (ir == 2) {
+        genre[i].genre_ids[ir] = `OTHER`;
+        return;
+      }
+      genre[i].genre_ids.pop();
+    });
+  });
+  gallery.innerHTML = testHbs(massForRender);
+}
+async function startRenderPromis(mass) {
   const massForRender = await mass;
 
   const tryGenres = await apiService.getGenre();
@@ -35,4 +69,5 @@ export default async function startRender(mass) {
   gallery.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
 }
 const massTrend = apiService.getTrend();
-startRender(massTrend);
+startRenderPromis(massTrend);
+export { startRender, startRenderPromis };

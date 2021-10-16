@@ -13,7 +13,7 @@ export default {
   gallery: document.querySelector('.gallery'),
   themeSwitch: document.querySelector('.theme-switch__control'),
   homeBtn: document.querySelector('[data-button="home"]'),
-  libraryBtn: document.querySelector('[data-button="library"]'),
+  libraryBtn: document.querySelector('.library__button'),
   logo: document.querySelector('.js-logo'),
   teamBtn: document.querySelector('.button-team'),
   closeBtnModal: document.querySelector('.modal__button-close'),
@@ -21,5 +21,4 @@ export default {
   openTeamModalBtn: document.querySelector('.modal-open'),
   closeTeamModalBtn: document.querySelector('.modal-close__btn'),
   modalTeam: document.querySelector('.backdrop'),
-
 };
