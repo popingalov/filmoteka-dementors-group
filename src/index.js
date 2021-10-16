@@ -7,16 +7,17 @@ import './templates/teamCard.hbs';
 import './js/pagination';
 import './js/localStorage';
 import './js/filmsPagination';
-import modal from './js/modal'
-import './js/forTeamModal.js'
+import modal from './js/modal';
+import './js/forTeamModal.js';
 /* const apiService = new ApiService(); */
-console.log(apiService.getTrend());
+
 const gallery = document.querySelector('.gallery');
 
-export default async function testRender() {
-  const tryThis = await apiService.getTrend();
+export default async function startRender(mass) {
+  const massForRender = await mass;
+
   const tryGenres = await apiService.getGenre();
-  const genre = tryThis.results;
+  const genre = massForRender.results;
   genre.forEach((e, i) => {
     e.genre_ids.forEach((er, ir) => {
       if (ir < 2) {
@@ -31,7 +32,7 @@ export default async function testRender() {
     });
   });
 
-  gallery.insertAdjacentHTML('beforeend', testHbs(tryThis.results));
+  gallery.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
 }
-testRender();
-console.log(gallery);
+const massTrend = apiService.getTrend();
+startRender(massTrend);
