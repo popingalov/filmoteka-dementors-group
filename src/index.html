@@ -49,14 +49,30 @@
     crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
     <script>
-    $('.team_container').slick({
+        const windowSize = window.screen.width
+        console.log(windowSize);
+        function slick (){
+            if(windowSize >= 1024){$('.team_container').slick({
     
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-  dots: true
-});
-    
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: true},)
+        }
+        if(windowSize >= 768){
+            $('.team_container').slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            dots: true
+            });
+        }else{
+            $('.team_container').slick({
+                dots: true
+            });
+        }
+        }
+        slick()
     </script>
     <script src="./index.js"></script>
 </body>

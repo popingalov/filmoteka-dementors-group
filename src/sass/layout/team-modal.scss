@@ -56,14 +56,14 @@
 
 .team_container {
     padding-top: 15px;
-    height: 80vh;
+    height: 50vh;
     @media screen and (min-width: 768px){
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         align-content: center;
-        height: 70vh;
+        height: 60vh;
     }
     
     @media screen and (min-width: 1024px){
@@ -78,6 +78,7 @@
 }
 .team_card__img {
     transform:perspective(800px) rotateY(25deg);
+    padding-bottom: 10px;
     .card &:hover {
         transform:perspective(800px) rotateY(0deg);
         opacity:1;
@@ -86,12 +87,15 @@
         height: 100%;
         object-fit:cover;
         
-        -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
-        
+        -webkit-box-reflect:right 5px linear-gradient(transparent, transparent, #0004);
     transform-origin:center;
     // transform:perspective(800px) rotateY(25deg);
     transition:0.5s;
 }
+}
+.name{
+    padding-bottom: 10px;
+
 }
 .card{
     display: grid;
