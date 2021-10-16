@@ -57,6 +57,7 @@
 .team_container {
     padding-top: 15px;
     height: 50vh;
+    width: 40vh;
     @media screen and (min-width: 768px){
         display: flex;
         flex-wrap: wrap;
@@ -64,11 +65,13 @@
         justify-content: space-between;
         align-content: center;
         height: 60vh;
+        width: 68vh;
     }
     
     @media screen and (min-width: 1024px){
     flex-direction: row;
-    max-height:32vh;
+    max-height:50vh;
+    width: 105vh;
 }}
 .team__title{
     font-size: 30px;
@@ -77,17 +80,19 @@
     margin-bottom: 15px;
 }
 .team_card__img {
-    transform:perspective(800px) rotateY(25deg);
+    // transform:perspective(800px) rotateY(25deg);
     padding-bottom: 10px;
+
+    width: 150px;
     .card &:hover {
-        transform:perspective(800px) rotateY(0deg);
+        // transform:perspective(800px) rotateY(0deg);
         opacity:1;
     }
     @media screen and (min-width: 1024px) {
         height: 100%;
         object-fit:cover;
         
-        -webkit-box-reflect:right 5px linear-gradient(transparent, transparent, #0004);
+        // -webkit-box-reflect:right 5px linear-gradient(transparent, transparent, #0004);
     transform-origin:center;
     // transform:perspective(800px) rotateY(25deg);
     transition:0.5s;
