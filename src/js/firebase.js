@@ -1,8 +1,16 @@
 import * as firebase from 'firebase/app';
-import {initializeApp} from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import 'firebase/database';
 import 'firebaseui';
 import 'firebaseui/dist/firebaseui.css';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from 'firebase/auth';
+
+const auth = getAuth();
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCKMwvZ2d9rJQsO0LnV6IaQSle_I48uM-I',
@@ -16,6 +24,5 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
 
 const ui = new firebaseui.auth.AuthUI(firebase.auth());
