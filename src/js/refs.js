@@ -18,5 +18,8 @@ export default {
   teamBtn: document.querySelector('.button-team'),
   closeBtnModal: document.querySelector('.modal__button-close'),
   modal: document.querySelector('div[data-modal]'),
+  openTeamModalBtn: document.querySelector('.modal-open'),
+  closeTeamModalBtn: document.querySelector('.modal-close__btn'),
+  modalTeam: document.querySelector('.backdrop'),
 
 };
