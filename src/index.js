@@ -3,6 +3,10 @@ import searchQuery from './js/searchForm.js';
 /* import './js/theme.js'; */
 import apiService from './js/apiService.js';
 import testHbs from './templates/gallery-homepage.hbs';
+import './templates/teamCard.hbs';
+import './js/pagination';
+import './js/localStorage';
+import './js/filmsPagination';
 import modal from './js/modal'
 import './js/forTeamModal.js'
 /* const apiService = new ApiService(); */
