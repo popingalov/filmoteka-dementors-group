@@ -1,13 +1,6 @@
 import './sass/main.scss';
 import searchQuery from './js/searchForm.js';
-
-
-//import './js/most-populary.js';
-//import './js/theme.js';
-
-
-
-
+/* import './js/theme.js'; */
 import apiService from './js/apiService.js';
 import testHbs from './templates/gallery-homepage.hbs';
 import modal from './js/modal'
