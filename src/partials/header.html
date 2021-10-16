@@ -1,30 +1,34 @@
-<header class="page-header page-header--home js-page-header">
-  <div class="container">
-    <div class="page-header__wrapper">
-      <nav class="site-nav">
-        <a class="logo js-logo">
-          <svg width="24" height="24">
-            <use href="./images/icons.svg#icon-logo"></use>
-          </svg>
-          <span class="logo__title">Filmoteka</span>
-        </a>
-        <ul class="site-nav__list js-navigation-list">
-          <li class="site-nav__item">
-            <button
-              class="site-nav__button site-nav__button--current"
-              data-button="home"
-              type="button"
-            >
-              Home
-            </button>
-          </li>
-          <li class="site-nav__item">
-            <button class="site-nav__button" data-button="library" type="button">My library</button>
-          </li>
-        </ul>
-      </nav>
+<div class="header-container">
+    <header class="page-header--home">
+        <div class="container">
+            <div class="site-nav">
+                <a class="logo">
+                    <svg width="24" height="24" class="logo-img">
+                        <use href="./images/icons.svg#icon-logo"></use>
+                    </svg>
+                    <span class="logo__title">Filmoteka</span>
+                </a>
+                <nav class="site-navigation">
+                    <button class="home__button current">Home</button>
+                    <button class="library__button">My library</button>
+                </nav>
+            </div>
 
-      <div class="form">
+            <!--<div class="library library--hidden">
+      <div class="library__wrapper">
+        <button class="btn-action watched active">watched</button>
+        <button class="btn-action queue">queue</button>
+      </div>
+    </div>-->
+
+            <form class="form-search">
+                <input type="search" placeholder="Search Movies" name="search" class="input-text" />
+                <svg type="image/svg+xml" width="12" height="12" class="logo-search">
+                    <use type="image/svg+xml" class="icon-cross" href="/images/icons.svg#icon-search"></use>
+                </svg>
+            </form>
+
+            <!--<div class="form">
         <form class="search-form" id="search-form">
           <input
             type="text"
@@ -41,45 +45,31 @@
             </svg>
           </button>
         </form>
-
-        <!-- Разметка переключателя темы -->
-        <div class="theme-switch">
-          <div class="theme-switch__control">
-            <input
-              class="theme-switch__toggle"
-              type="checkbox"
-              name="theme"
-              id="codepen"
-              aria-label="Переключить между тёмной и светлой темой"
-            />
-            <label aria-hidden="true" class="theme-switch__track" for="codepen">
-              <div class="theme__icon">
-                <span
-                  ><svg type="image/svg+xml" class="sunny__icon">
-                    <use
-                      type="image/svg+xml"
-                      class=""
-                      alt="icon-moon"
-                      href="./images/icons.svg#icon-moon"
-                    ></use>
-                  </svg>
-                </span>
-                <span>
-                  <svg type="image/svg+xml" class="sunny__icon">
-                    <use
-                      type="image/svg+xml"
-                      class=""
-                      alt="icon-sunny"
-                      href="./images/icons.svg#icon-sunny"
-                    ></use>
-                  </svg>
-                </span>
-              </div>
-            </label>
-          </div>
+      </div> -->
+            <div class="theme-switch">
+                <div class="theme-switch__control">
+                    <input class="theme-switch__toggle" type="checkbox" name="theme" id="codepen"
+                        aria-label="Переключить между тёмной и светлой темой" />
+                    <label aria-hidden="true" class="theme-switch__track" for="codepen">
+                        <div class="theme__icon">
+                            <span>
+                                <svg type="image/svg+xml" class="sunny__icon">
+                                    <use type="image/svg+xml" class="" alt="icon-moon"
+                                        href="./images/icons.svg#icon-moon"></use>
+                                </svg>
+                            </span>
+                            <span>
+                                <svg type="image/svg+xml" class="sunny__icon">
+                                    <use type="image/svg+xml" class="" alt="icon-sunny"
+                                        href="./images/icons.svg#icon-sunny"></use>
+                                </svg>
+                            </span>
+                        </div>
+                    </label>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- Добавить авторизацию -->
-  </div>
-</header>
+
+        <!-- Добавить авторизацию -->
+    </header>
+</div>
