@@ -1,7 +1,6 @@
 import refs from './refs';
 
 refs.gallery.addEventListener('click', onMovieClick);
-refs.closeBtnModal.addEventListener('click', closeModal);
 refs.modal.addEventListener('click', closeModal);
 window.addEventListener('keydown', modalCloseByEsc);
 
@@ -18,9 +17,12 @@ function openModal() {
 }
 
 // закрытие модалки
-function closeModal() {
-    console.log("hi");
-  refs.modal.classList.add('is-hidden');
+function closeModal(e) {
+  if(e.target.nodeName == 'svg' || e.target.nodeName == 'use'){
+     refs.modal.classList.toggle('is-hidden') 
+  }
+if(e.target.classList == 'backdrop'){refs.modal.classList.toggle('is-hidden')}
+  
 }
 function modalCloseByEsc(e) {
   if (e.code === 'Escape') {
