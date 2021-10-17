@@ -1,3 +1,4 @@
+
 <img  class="modal__image" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{poster_path}}"
     srcset="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{poster_path}} 1x, https://www.themoviedb.org/t/p/w1280{{poster_path}} 2x">
 <div class="modal__wrapper">
@@ -21,7 +22,7 @@
         </li>
         <li class="modal-list__item">
             <p class="modal-list__text">Genre</p>{{#each genres}}
-            <span class="modal-list__span list">{{this.name}}</span>
+            <span class="modal-list__span list">{{this.name}}, </span>
             {{/each}}
         </li>
     </ul>
@@ -29,6 +30,6 @@
     <p class="modal__about-text">{{overview}}</p>
     <div class="modal__buttons-wrapper">
         <button class="modal__button modal__button-watched" type="button">Add to watched</button>
-        <button class="modal__button" type="button">Add to queue</button>
+        <button class="modal__button modal__button-queue" type="button">Add to queue</button>
     </div>
 </div>
