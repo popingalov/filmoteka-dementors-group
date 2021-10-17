@@ -41,6 +41,7 @@
     "notifyjs": "^3.0.0",
     "swiper": "^7.0.8",
     "throttle": "^1.0.3",
-    "throttle-debounce": "^3.0.1"
+    "throttle-debounce": "^3.0.1",
+    "tui-pagination": "^3.4.1"
   }
 }

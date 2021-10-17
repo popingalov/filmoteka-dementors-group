@@ -7,7 +7,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    z-index: 5;
     overflow-y: scroll;
     background-color: var(--backdrop-color);
   transition: opacity var(--transition-function) var(--timing-function);
@@ -16,6 +15,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    z-index: 5;
 }
 .modal-window{
     transform: translate(-50%, -50%) scale(1);
@@ -26,6 +26,11 @@
     padding: 40px;
     max-width: 100%;
     max-height: 80vh;
+
+    background-image: url('../images/team-foto/dementor.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
     
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -46,6 +51,8 @@
     position: absolute;
     top: 8px;
     right: 8px;
+    z-index: 6;
+
 
     width: 30px;
     height: 30px;
@@ -56,21 +63,19 @@
 
 .team_container {
     padding-top: 15px;
-    height: 50vh;
+    height: 43vh;
     width: 40vh;
     @media screen and (min-width: 768px){
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         align-content: center;
-        height: 60vh;
+        height: 42vh;
         width: 68vh;
     }
     
     @media screen and (min-width: 1024px){
-    flex-direction: row;
-    max-height:50vh;
+    max-height:40vh;
     width: 105vh;
 }}
 .team__title{
@@ -81,41 +86,39 @@
 }
 .team_card__img {
     // transform:perspective(800px) rotateY(25deg);
-    padding-bottom: 10px;
-
+    padding: 20px 0;
     width: 150px;
+    height: 200px;
+    border-radius: 50%;
+    transform-origin:center;
+    transition:0.5s;
     .card &:hover {
-        // transform:perspective(800px) rotateY(0deg);
+        transform: scale(1.2);
         opacity:1;
     }
     @media screen and (min-width: 1024px) {
-        height: 100%;
         object-fit:cover;
-        
-        // -webkit-box-reflect:right 5px linear-gradient(transparent, transparent, #0004);
-    transform-origin:center;
-    // transform:perspective(800px) rotateY(25deg);
-    transition:0.5s;
 }
 }
 .name{
+    color: var(--color-accent);
     padding-bottom: 10px;
-
+}
+.title{
+    color: var(--color-accent);
 }
 .card{
-    display: grid;
-    align-content: space-between;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    gap:20px;
-    &:hover .team_card__img {
-        opacity:0.3;
-    }
+    margin-left: 15px;
+
 }
 .github{
     display: inline-block;
     margin-right: 10px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    &:hover{
+    transform: scale(1.5);
+    }
 }
 .slick-next:before, .slick-prev:before{
     color: var(--color-dark);

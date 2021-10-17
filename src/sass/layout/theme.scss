@@ -1,7 +1,7 @@
 body.light-theme {
-  background-color: white;
+  background-color: var(--color-white);
 }
-
+///согласовать классы модального окна, пагинации, команды,
 body.dark-theme {
   background-color: #000000;
   footer {
@@ -10,7 +10,7 @@ body.dark-theme {
   }
   .gallery-list {
     h3 {
-      color: white;
+      color: var(--color-white);
     }
 
     &__item {
@@ -33,7 +33,8 @@ body.dark-theme {
       background-color: rgb(68, 67, 67);
       &:hover {
         background-color: #ff6b08;
-        color: white;
+        color: var(--color-white);
+
         border-radius: 5px;
       }
     }
@@ -41,12 +42,13 @@ body.dark-theme {
   .pagenumbers {
     button,
     div {
-      color: white;
+      color: var(--color-white);
     }
   }
   .footer__page,
   .up-btn__icon {
-    color: white;
+    color: var(--color-white);
+
     fill: white;
     &:hover,
     &:focus {
@@ -56,9 +58,10 @@ body.dark-theme {
   }
   .modal-film-card {
     background-color: #000000;
-    color: white;
+    color: var(--color-white);
+
     a {
-      color: white;
+      color: var(--color-white);
     }
     .trailer-link__svg {
       fill: white;
@@ -69,7 +72,8 @@ body.dark-theme {
   }
   .team__wrapper {
     background-color: #000000;
-    color: white;
+    color: var(--color-white);
+
     .team__image {
       box-shadow: 0px -2px 32px 1px #ff6b08;
     }
@@ -80,23 +84,22 @@ body.dark-theme {
 }
 
 .theme-switch {
-  position: absolute;
+  //position: absolute;
   right: 0;
-  top: 170px;
+  top: 20px;
   display: flex;
   justify-content: flex-end;
-  padding: 16px 24px;
+  padding: 40px 0px;
 
   @media screen and (min-width: 767px) {
-    top: 150px;
+    //  top: 150px;
+    padding: 30px 0px;
   }
 }
-
 .theme-switch__control {
   display: flex;
   align-items: center;
 }
-
 .theme-switch__toggle {
   display: none;
 }
@@ -109,7 +112,7 @@ body.dark-theme {
   margin-left: 2px;
   height: 17px;
   width: 17px;
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     height: 25px;
     width: 25px;
   }
@@ -128,7 +131,7 @@ body.dark-theme {
   transition: all 500ms ease;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2) inset;
 
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     width: 64px;
     height: 32px;
     background-size: ((64px * 2) + 50) 100%;
@@ -153,7 +156,7 @@ body.dark-theme {
     text-transform: uppercase;
     transition: left 500ms ease, color 500ms ease, transform 150ms ease;
 
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 768px) {
       width: 26px;
       height: 26px;
       left: 2px;
@@ -169,14 +172,14 @@ body.dark-theme {
 }
 .theme-switch__toggle:checked + label {
   background-position-x: -(42px + 50);
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     background-position-x: -(64px + 50);
   }
   &:before {
     content: '';
     color: #007177;
     left: (42px - 16px - 1px);
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 768px) {
       left: (64px - 26px - 2px);
     }
   }
@@ -187,7 +190,7 @@ body.dark-theme {
   width: 15px;
   margin-right: 4px;
   margin-left: 4px;
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     height: 30px;
     width: 30px;
     margin-right: 8px;
