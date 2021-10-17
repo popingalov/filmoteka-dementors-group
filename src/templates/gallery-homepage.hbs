@@ -1,13 +1,14 @@
 <ul class="list gallery_list">
-{{#each this}}
-<li class="gallery_card" data-id="{{id}}" >
-    <img class="gallery_img" data-id="{{id}}" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{poster_path}}" alt="{{title}}"
-        width="280" height="400" />
-    <h2 class="gallery_title">{{original_title}}</h2>
-    <div class="label">
-        <span class="gallery_label">{{genre_ids}}</span> | 
-        <span class="gallery_label">{{release_date}}</span>
-    </div>
-</li>
-{{/each}}
+    {{#each this}}
+    <li class="gallery_card" data-id="{{id}}">
+        <img class="gallery_img" data-id="{{id}}"
+            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{poster_path}}" alt="{{title}}" width="280"
+            height="400" />
+        <h2 class="gallery_title">{{original_title}}</h2>
+        <div class="label">
+            <span class="gallery_label">{{genre_ids}}</span> |
+            <span class="gallery_label">{{release_date}}</span>
+        </div>
+    </li>
+    {{/each}}
 </ul>
