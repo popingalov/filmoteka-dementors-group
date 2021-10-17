@@ -16,8 +16,11 @@ function navClick(e) {
     e.target.textContent == 'Filmoteka' ||
     e.target.textContent == 'Home'
   ) {
-    console.log(e.target);
     libraryRebder();
+    return;
+  }
+  if (e.target.textContent == 'My library') {
+    console.log('yep');
   }
 }
 console.log('asd');
