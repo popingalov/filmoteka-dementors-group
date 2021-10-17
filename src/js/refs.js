@@ -1,4 +1,4 @@
-/* 
+/*
 1.input
 2.галерея
 3.карточка
@@ -21,5 +21,7 @@ export default {
   openTeamModalBtn: document.querySelector('.modal-open'),
   closeTeamModalBtn: document.querySelector('.modal-close__btn'),
   modalTeam: document.querySelector('.backdrop'),
+
+//sliderContainer:document.querySelector('.swiper-wrapper');
 
 };

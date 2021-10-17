@@ -1,6 +1,7 @@
 import './sass/main.scss';
 import searchQuery from './js/searchForm.js';
 /* import './js/theme.js'; */
+//import './js/slider'
 import apiService from './js/apiService.js';
 import testHbs from './templates/gallery-homepage.hbs';
 import './templates/teamCard.hbs';
