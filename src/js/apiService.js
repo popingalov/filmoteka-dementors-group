@@ -12,18 +12,18 @@ class filmsApiProg {
         `${this.filmURL}/search/movie?api_key=${this.key}&query=${this.searchQuery}`,
       );
       const findFilms = filmesFox.data;
-      console.log(filmesFox.data);
+      console.log(filmesFox.data.results);
       return findFilms;
     } catch (error) {
       console.log(error);
     }
   }
 
-  async getTrend() {
+  async getTrend(page = 1) {
     try {
-      const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}`);
+      const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${page}`);
       const trending = filmesFox.data;
-      return trending
+      return trending;
     } catch (error) {
       console.log(error);
     }
@@ -70,20 +70,19 @@ class filmsApiProg {
       console.log(error);
     }
   }
-        async getGenre() {
+  async getGenre() {
     try {
       const genreFilms = await axios.get(`${this.filmURL}/genre/movie/list?api_key=${this.key}`);
-      const genre = genreFilms.data
-      const { genres } = genre
-      this.result = {}
+      const genre = genreFilms.data;
+      const { genres } = genre;
+      this.result = {};
       genres.forEach(({ id, name }) => {
-        this.result[id] = name
-      })
-      return (this.result);
+        this.result[id] = name;
+      });
+      return this.result;
     } catch (error) {
       console.log(error);
     }
   }
 }
 export default new filmsApiProg('7c9dd50606a07df965d51fc9621e1448');
-
