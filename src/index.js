@@ -70,4 +70,26 @@ async function startRenderPromis(mass) {
 }
 const massTrend = apiService.getTrend();
 startRenderPromis(massTrend);
+renderInLocalSave(massTrend);
+async function renderInLocalSave(mass) {
+  const massForRender = await mass;
+
+  const tryGenres = await apiService.getGenre();
+  const genre = massForRender.results;
+  genre.forEach((e, i) => {
+    e.genre_ids.forEach((er, ir) => {
+      if (ir < 2) {
+        genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
+        return;
+      }
+      if (ir == 2) {
+        genre[i].genre_ids[ir] = `OTHER`;
+        return;
+      }
+      genre[i].genre_ids.pop();
+    });
+  });
+  localStorage.setItem('startRender', JSON.stringify(massForRender));
+}
+
 export { startRender, startRenderPromis };

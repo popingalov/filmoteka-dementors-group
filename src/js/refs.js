@@ -21,4 +21,5 @@ export default {
   openTeamModalBtn: document.querySelector('.modal-open'),
   closeTeamModalBtn: document.querySelector('.modal-close__btn'),
   modalTeam: document.querySelector('.backdrop'),
+  nav: document.querySelector('.site-nav'),
 };
