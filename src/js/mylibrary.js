@@ -9,11 +9,12 @@ refs.libraryBtn.addEventListener('click', localRender); */
 refs.nav.addEventListener('click', navClick);
 
 function navClick(e) {
-  /* console.dir(e.target.textContent); */
+  console.dir(e.target.textContent);
   if (
     e.target.nodeName == 'svg' ||
     e.target.nodeName == 'use' ||
-    e.target.textContent == 'Filmoteka'
+    e.target.textContent == 'Filmoteka' ||
+    e.target.textContent == 'Home'
   ) {
     console.log(e.target);
     libraryRebder();
@@ -22,6 +23,9 @@ function navClick(e) {
 console.log('asd');
 function libraryRebder() {
   const localMass = JSON.parse(localStorage.getItem('startRender'));
+  localMass.results.pop();
+  localMass.results.pop();
+  localMass.results.pop();
   localMass.results.pop();
   localMass.results.pop();
   localMass.results.pop();

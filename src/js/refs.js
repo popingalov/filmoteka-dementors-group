@@ -8,8 +8,8 @@
 
 */
 export default {
-  searchForm: document.querySelector('.form-search'),
-  searchInput: document.querySelector('.input-text'),
+  searchForm: document.querySelector('.search-form'),
+  searchInput: document.querySelector('.search-field'),
   gallery: document.querySelector('.gallery'),
   themeSwitch: document.querySelector('.theme-switch__control'),
   homeBtn: document.querySelector('[data-button="home"]'),

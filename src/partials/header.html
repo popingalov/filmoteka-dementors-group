@@ -21,14 +21,48 @@
       </div>
     </div>-->
 
-            <form class="form-search">
+            <!--     <form class="form-search">
                 <input type="search" placeholder="Search Movies" name="search" class="input-text" />
                 <svg type="image/svg+xml" width="12" height="12" class="logo-search">
                     <use type="image/svg+xml" class="icon-cross" href="/images/icons.svg#icon-search"></use>
                 </svg>
-            </form>
+            </form> -->
+            <div class="header-nav-container">
+                <div class="header-backdrop is-hidden js-backdrop">
+                    <div class="modal__container__auth" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                        <button type="button" class="button-close-modal" data-action="close-modal">x</button>
+                        <h2 class="auth-header sing-up">Sign IN</h2>
+                        <div id="firebaseui-auth-container"></div>
+                    </div>
+                </div>
+                <div class="form">
+                    <form class="search-form" id="search-form">
+                        <input type="text" name="query" autocomplete="off" placeholder="Поиск фильмов"
+                            class="search-field" id="name" />
+                        <label class="form-label" for="name">Поиск фильмов</label>
+                        <button type="submit" class="search-btn">
+                            <svg class="search-icon" width="12" height="12">
+                                <use href="/images/icons.svg#icon-search"></use>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="header-warning" id="js-warning"></div>
+                <div class="library-btn visually-hidden" id="js-buttons">
+                    <button type="button" class="handle-button header-button lib watched-js" data-action="watched">
+                        <span class="handle-button__title">watched</span>
+                    </button>
 
-            <!--<div class="form">
+                    <button type="button" class="handle-button header-button lib queue-js" data-action="queue">
+                        <span class="handle-button__title">queue</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--<div class="form">
         <form class="search-form" id="search-form">
           <input
             type="text"
@@ -46,30 +80,30 @@
           </button>
         </form>
       </div> -->
-            <div class="theme-switch">
-                <div class="theme-switch__control">
-                    <input class="theme-switch__toggle" type="checkbox" name="theme" id="codepen"
-                        aria-label="Переключить между тёмной и светлой темой" />
-                    <label aria-hidden="true" class="theme-switch__track" for="codepen">
-                        <div class="theme__icon">
-                            <span>
-                                <svg type="image/svg+xml" class="sunny__icon">
-                                    <use type="image/svg+xml" class="" alt="icon-moon"
-                                        href="./images/icons.svg#icon-moon"></use>
-                                </svg>
-                            </span>
-                            <span>
-                                <svg type="image/svg+xml" class="sunny__icon">
-                                    <use type="image/svg+xml" class="" alt="icon-sunny"
-                                        href="./images/icons.svg#icon-sunny"></use>
-                                </svg>
-                            </span>
-                        </div>
-                    </label>
-                </div>
+        <div class="theme-switch">
+            <div class="theme-switch__control">
+                <input class="theme-switch__toggle" type="checkbox" name="theme" id="codepen"
+                    aria-label="Переключить между тёмной и светлой темой" />
+                <label aria-hidden="true" class="theme-switch__track" for="codepen">
+                    <div class="theme__icon">
+                        <span>
+                            <svg type="image/svg+xml" class="sunny__icon">
+                                <use type="image/svg+xml" class="" alt="icon-moon" href="./images/icons.svg#icon-moon">
+                                </use>
+                            </svg>
+                        </span>
+                        <span>
+                            <svg type="image/svg+xml" class="sunny__icon">
+                                <use type="image/svg+xml" class="" alt="icon-sunny"
+                                    href="./images/icons.svg#icon-sunny"></use>
+                            </svg>
+                        </span>
+                    </div>
+                </label>
             </div>
         </div>
+</div>
 
-        <!-- Добавить авторизацию -->
-    </header>
+<!-- Добавить авторизацию -->
+</header>
 </div>
