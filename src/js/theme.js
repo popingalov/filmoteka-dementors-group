@@ -34,11 +34,11 @@ function changeTheme(e) {
   body.classList.toggle(Theme.LIGHT);
   body.classList.toggle(Theme.DARK);
 
-  footer.classList.toggle(Theme.LIGHT);
-  footer.classList.toggle(Theme.DARK);
+  refs.footerEl.classList.toggle(Theme.LIGHT);
+  refs.footerEl.classList.toggle(Theme.DARK);
 
-  modalRefs.movieWrap.classList.toggle(Theme.LIGHT);
-  modalRefs.movieWrap.classList.toggle(Theme.DARK);
+  refs.modal.movieWrap.classList.toggle(Theme.LIGHT);
+  refs.modal.movieWrap.classList.toggle(Theme.DARK);
 
   if (e.currentTarget.checked) {
     localStorage.setItem('theme', Theme.DARK);
