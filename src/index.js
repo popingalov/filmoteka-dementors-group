@@ -11,6 +11,7 @@ import './js/filmsPagination';
 import modal from './js/modal';
 import './js/forTeamModal.js';
 import './js/mylibrary';
+import './js/filmsCategories'
 /* const apiService = new ApiService(); */
 
 const gallery = document.querySelector('.gallery');

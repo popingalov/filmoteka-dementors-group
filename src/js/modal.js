@@ -30,6 +30,7 @@ function closeModal(e) {
   if (e.target.classList == 'backdrop') {
     refs.modal.classList.toggle('is-hidden')
   }
+
   
 }
 function modalCloseByEsc(e) {
@@ -44,9 +45,9 @@ function modalCloseByEsc(e) {
     return 
   }
   const dataId = e.target.dataset.id
-  const film = apiService.getBildFilm(dataId)
+   const film = apiService.getBildFilm(dataId)
+
     film.then(response => {
-      console.log(response)
     modalWindow.innerHTML = `${filmCard(response)}`
     openModal()
 })

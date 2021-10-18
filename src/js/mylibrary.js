@@ -23,7 +23,7 @@ function navClick(e) {
     console.log('yep');
   }
 }
-console.log('asd');
+
 function libraryRebder() {
   const localMass = JSON.parse(localStorage.getItem('startRender'));
   localMass.results.pop();
