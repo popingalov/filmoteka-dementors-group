@@ -9,10 +9,10 @@ const checkbox = document.querySelector('.theme-switch__toggle');
 //const themeInLocalStorage = localStorage.getItem('Theme');
 const saveTheme = localStorage.getItem('theme');
 if (saveTheme === Theme.DARK) {
-  refs.checkbox.checked = true;
-  refs.body.classList.add(Theme.DARK);
-  refs.footer.classList.add(Theme.DARK);
-  modalRefs.movieWrap.classList.toggle(Theme.DARK);
+  checkbox.checked = true;
+  refs.bodyEl.classList.add(Theme.DARK);
+  refs.footerEl.classList.add(Theme.DARK);
+  refs.modal.movieWrap.classList.toggle(Theme.DARK);
 }
 
 (function openLastSavedTheme() {
