@@ -60,8 +60,17 @@ function newFunction() {
           return
         }
         e.target.textContent = 'Remove from Watched'
-        itemParse.push(data)
+
+        
+        function push() {
+          if (itemParse.indexOf(data) === -1) {
+            console.log(itemParse.indexOf(data));
+            itemParse.push(data)
+          }
+        }
+        push()
         localStorage.setItem('watched', JSON.stringify(itemParse))
+        
       }
       const onClickBtnWatch = watchedBtn.addEventListener('click', local)
         // const onClickBtnWatch = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })
@@ -81,8 +90,14 @@ function newFunction() {
           return
         }
         e.target.textContent = 'Remove from queue'
-         
-        itemParse.push(data)
+
+        function push() {
+          if (itemParse.indexOf(data) === -1) {
+            console.log(itemParse.indexOf(data));
+            itemParse.push(data)
+          }
+        }
+        push()
         localStorage.setItem('queue', JSON.stringify(itemParse))
       }
       const onClickBtnWatch = queueBtn.addEventListener('click', local)
