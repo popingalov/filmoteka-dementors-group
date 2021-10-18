@@ -19,9 +19,9 @@ class filmsApiProg {
     }
   }
 
-  async getTrend() {
+  async getTrend(page = 1) {
     try {
-      const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}`);
+      const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${page}`);
       const trending = filmesFox.data;
       return trending;
     } catch (error) {

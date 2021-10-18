@@ -1,9 +1,7 @@
-
 import apiService from './apiService';
 import filmsCards from '../templates/teamCard.hbs';
 import storage from './localStorage';
 import filmsWithRating from '../templates/gallery-homepage.hbs';
-
 
 const listFilms = document.querySelector('.list-movies');
 
@@ -12,9 +10,8 @@ class RenderFilms {
   // Основная функция
   async renderTrendingMovies(page) {
     try {
-      const films = await this.getMovies(page);
-      const filmsWithGenre = await this.getGenre(films);
-      this.renderHomeCards(filmsWithGenre);
+      const films = await apiService.getTrend(page);
+      this.renderHomeCards(films.results);
 
     } catch (error) {
       console.log(error);
@@ -72,7 +69,8 @@ class RenderFilms {
   }
   // render without rating
   renderHomeCards(films) {
-    this.clearListFilmsMrk();
+    const listFilms = document.querySelector('.list.gallery_list');
+    listFilms.innerHTML = "";
     listFilms.insertAdjacentHTML('beforeend', filmsCards(films));
   }
 

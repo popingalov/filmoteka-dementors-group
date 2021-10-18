@@ -24,7 +24,7 @@ function loadPage(currentPage) {
 function moveEvent() {
     pagination.on('afterMove', event => {
         const currentPage = event.page;
-        
+
         localStorage.setItem('page', currentPage);
         filmsRender.renderTrendingMovies(currentPage);
 });
