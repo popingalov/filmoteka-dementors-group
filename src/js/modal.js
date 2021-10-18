@@ -34,18 +34,19 @@ function modalCloseByEsc(e) {
 function filmClick(e) {
 const dataId = e.target.closest('li').dataset.id
 const film = apiService.getBildFilm(dataId)
-  film.then(response => {
-    modalWindow.innerHTML = `${filmCard(response)}`
-    openModal()
-    newFunction()
-    newFunction2()
-     if (JSON.parse(localStorage.getItem('watched')).find((e) => e !== response.id)) {
-       console.log('awdawd');
-     }
-  })
-  function newFunction() {
-    const watchedBtn = document.querySelector('.modal__button-watched')
-    film.then(data => {
+film.then(response => {
+  modalWindow.innerHTML = `${filmCard(response)}`
+  if ((JSON.parse(localStorage.getItem('watched')).find((event) => event.id == response.id)) !== undefined) {
+    document.querySelector('.modal__button-watched').textContent = 'Remove from Watched'
+  }
+  
+  openModal()
+  newFunction()
+  newFunction2()
+})
+function newFunction() {
+  film.then(data => {
+      const watchedBtn = document.querySelector('.modal__button-watched')
       const itemParse = JSON.parse(localStorage.getItem('watched'))
       function local(e) {
         if (e.target.textContent == 'Remove from Watched') {
@@ -55,9 +56,7 @@ const film = apiService.getBildFilm(dataId)
           e.target.textContent = 'Add to Watched'
           return
         }
-         
         e.target.textContent = 'Remove from Watched'
-         
         itemParse.push(data)
         localStorage.setItem('watched', JSON.stringify(itemParse))
       }
