@@ -94,3 +94,10 @@ async function renderInLocalSave(mass) {
 }
 
 export { startRender, startRenderPromis };
+
+if (!JSON.parse(localStorage.getItem('watched'))) {
+  localStorage.setItem('watched', JSON.stringify([]));
+}
+if (!JSON.parse(localStorage.getItem('queue'))) {
+  localStorage.setItem('queue', JSON.stringify([]));
+}

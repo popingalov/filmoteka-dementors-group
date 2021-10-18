@@ -5,19 +5,10 @@ import { get } from 'jquery';
 
 const modalWindow = document.querySelector('.content')
 
-
 refs.gallery.addEventListener('click', filmClick);
 refs.modal.addEventListener('click', closeModal);
 window.addEventListener('keydown', modalCloseByEsc);
 
-
-// function onMovieClick(e) {
-//   if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
-//     return;
-//   }
-//   openModal();
-// }
-// // открытие модалки
 function openModal() {
   refs.modal.classList.remove('is-hidden');
 }
@@ -39,16 +30,63 @@ function modalCloseByEsc(e) {
   }
 }
 
- function filmClick(e) {
-   if (e.target.nodeName !== 'LI' & e.target.nodeName !== 'IMG') {
-    return 
+
+function filmClick(e) {
+const dataId = e.target.closest('li').dataset.id
+const film = apiService.getBildFilm(dataId)
+film.then(response => {
+  modalWindow.innerHTML = `${filmCard(response)}`
+  if ((JSON.parse(localStorage.getItem('watched')).find((event) => event.id == response.id)) !== undefined) {
+    document.querySelector('.modal__button-watched').textContent = 'Remove from Watched'
   }
-  const dataId = e.target.dataset.id
-  const film = apiService.getBildFilm(dataId)
-    film.then(response => {
-      console.log(response)
-    modalWindow.innerHTML = `${filmCard(response)}`
-    openModal()
+  if ((JSON.parse(localStorage.getItem('queue')).find((event) => event.id == response.id)) !== undefined) {
+    document.querySelector('.modal__button-queue').textContent = 'Remove from Queue'
+  }
+  
+  openModal()
+  newFunction()
+  newFunction2()
 })
-filmClick()
+function newFunction() {
+  film.then(data => {
+      const watchedBtn = document.querySelector('.modal__button-watched')
+      const itemParse = JSON.parse(localStorage.getItem('watched'))
+      function local(e) {
+        if (e.target.textContent == 'Remove from Watched') {
+          const findFilm = JSON.parse(localStorage.getItem('watched')).filter(
+          film => film.id !== data.id)
+          localStorage.setItem('watched', JSON.stringify(findFilm))
+          e.target.textContent = 'Add to Watched'
+          return
+        }
+        e.target.textContent = 'Remove from Watched'
+        itemParse.push(data)
+        localStorage.setItem('watched', JSON.stringify(itemParse))
+      }
+      const onClickBtnWatch = watchedBtn.addEventListener('click', local)
+        // const onClickBtnWatch = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })
+    })
+  }
+  function newFunction2() {
+    const queueBtn = document.querySelector('.modal__button-queue')
+    film.then(data => {
+      const itemParse = JSON.parse(localStorage.getItem('queue'))
+
+      function local(e) {
+        if (e.target.textContent == 'Remove from queue') {
+          const findFilm = JSON.parse(localStorage.getItem('queue')).filter(
+          film => film.id !== data.id)
+          localStorage.setItem('queue', JSON.stringify(findFilm))
+          e.target.textContent = 'Add to queue'
+          return
+        }
+        e.target.textContent = 'Remove from queue'
+         
+        itemParse.push(data)
+        localStorage.setItem('queue', JSON.stringify(itemParse))
+      }
+      const onClickBtnWatch = queueBtn.addEventListener('click', local)
+        // const queueBtn = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })
+    })
+  }
 }
