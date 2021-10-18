@@ -1,9 +1,9 @@
-.header-container {
+/*.header-container {
   min-width: 280px;
   margin-bottom: 50px;
   //  background: black;
 }
-
+*/
 .page-header--home {
   height: 230px;
 
@@ -43,12 +43,12 @@
   }
 }
 
-//library-list
+//------library-------////////////
 .library {
   height: 230px;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  //background-position: center;
+  //background-size: contain;
+  //background-repeat: no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url(/images/library-h-mob.jpg);
 
@@ -82,14 +82,12 @@
   }
 }
 
-/*.page-header__wrapper {
+.library__wrapper {
   display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+  flex-direction: row;
+  justify-content: center;
 }
-*/
 
-//logo
 //logo
 .logo {
   display: flex;
@@ -99,15 +97,9 @@
 
   animation-duration: 1500ms;
 }
-//.logo-img {
-//  margin-right: 12px;
-//  margin-top: 46px;
-//}
 
 .logo__title {
-  //margin-top: 41px;
   margin-left: 12px;
-
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -140,11 +132,11 @@
 // NAV
 
 .site-nav {
-  padding-top: 48px;
+  padding-top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .site-navigation {
@@ -155,20 +147,7 @@
   line-height: 14px;
   display: flex;
 }
-/*.site-nav__list {
-  display: flex;
-  height: 0;
-}
 
-.site-nav__item {
-  &:not(:last-child) {
-    margin-right: 40px;
-
-    @media screen and (max-width: 767px) {
-      margin-right: 16px;
-    }
-  }
-}*/
 .home__button {
   outline: none;
   cursor: pointer;
@@ -187,7 +166,6 @@
 
 .library__button {
   cursor: pointer;
-  //  margin-right: 39px;
   outline: none;
   border: none;
   background-color: transparent;
@@ -215,16 +193,6 @@
     border-radius: 2px;
   }
 }
-.sign-in {
-  cursor: pointer;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  color: white;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-}
 
 input::-webkit-input-placeholder {
   color: white;
@@ -234,7 +202,7 @@ input::-webkit-input-placeholder {
 .library__wrapper {
   display: flex;
   justify-content: center;
-  padding-top: 60px;
+  padding-bottom: 220px;
 }
 
 .btn-action {
@@ -281,7 +249,7 @@ input::-webkit-input-placeholder {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 15px 0 0;
+  //padding: 15px 0 0;
   min-width: 280px;
 }
 
@@ -291,7 +259,7 @@ input::-webkit-input-placeholder {
   border-bottom: 0.5px solid white;
   outline: 0;
   color: white;
-  padding: 7px 0;
+  padding: 10px 0;
   background: transparent;
   transition: border-color 0.2s;
 

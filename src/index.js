@@ -1,7 +1,8 @@
 import './sass/main.scss';
 import searchQuery from './js/searchForm.js';
-/* import './js/theme.js'; */
-//import './js/slider'
+import './js/refs';
+import './js/theme';
+import './js/pagination';
 import apiService from './js/apiService.js';
 import testHbs from './templates/gallery-homepage.hbs';
 import './templates/teamCard.hbs';
@@ -11,6 +12,7 @@ import './js/filmsPagination';
 import modal from './js/modal';
 import './js/forTeamModal.js';
 import './js/mylibrary';
+import './js/slider.js';
 /* const apiService = new ApiService(); */
 
 const gallery = document.querySelector('.gallery');

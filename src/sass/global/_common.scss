@@ -79,8 +79,14 @@ button {
 }
 
 .is-hidden {
+  //height: 1px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition-duration: 0.25s;
+}
+
+.main {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
