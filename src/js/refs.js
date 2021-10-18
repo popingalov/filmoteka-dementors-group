@@ -12,7 +12,7 @@ export default {
   searchInput: document.querySelector('.search-field'),
   gallery: document.querySelector('.gallery'),
   themeSwitch: document.querySelector('.theme-switch__control'),
-  homeBtn: document.querySelector('[data-button="home"]'),
+  homeBtn: document.querySelector('.home__button'),
   libraryBtn: document.querySelector('.library__button'),
   logo: document.querySelector('.js-logo'),
   teamBtn: document.querySelector('.button-team'),
@@ -22,5 +22,7 @@ export default {
   closeTeamModalBtn: document.querySelector('.modal-close__btn'),
   modalTeam: document.querySelector('.backdrop'),
   nav: document.querySelector('.site-nav'),
-//sliderContainer:document.querySelector('.swiper-wrapper');
+  sliderContainer: document.querySelector('.slider-wrapper'),
+  watchedBtn: document.querySelector('.watched'),
+  queueBtn: document.querySelector('.queue'),
 };
