@@ -39,6 +39,9 @@ film.then(response => {
   if ((JSON.parse(localStorage.getItem('watched')).find((event) => event.id == response.id)) !== undefined) {
     document.querySelector('.modal__button-watched').textContent = 'Remove from Watched'
   }
+  if ((JSON.parse(localStorage.getItem('queue')).find((event) => event.id == response.id)) !== undefined) {
+    document.querySelector('.modal__button-queue').textContent = 'Remove from Queue'
+  }
   
   openModal()
   newFunction()
