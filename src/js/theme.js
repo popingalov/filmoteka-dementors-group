@@ -2,17 +2,17 @@ const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-import refs from './refs.js';
+
 const body = document.querySelector('body');
 const checkbox = document.querySelector('.theme-switch__toggle');
 
 //const themeInLocalStorage = localStorage.getItem('Theme');
 const saveTheme = localStorage.getItem('theme');
 if (saveTheme === Theme.DARK) {
-  checkbox.checked = true;
-  refs.bodyEl.classList.add(Theme.DARK);
-  refs.footerEl.classList.add(Theme.DARK);
-  refs.modal.movieWrap.classList.toggle(Theme.DARK);
+  refs.checkbox.checked = true;
+  refs.body.classList.add(Theme.DARK);
+  refs.footer.classList.add(Theme.DARK);
+  modalRefs.movieWrap.classList.toggle(Theme.DARK);
 }
 
 (function openLastSavedTheme() {
@@ -34,11 +34,11 @@ function changeTheme(e) {
   body.classList.toggle(Theme.LIGHT);
   body.classList.toggle(Theme.DARK);
 
-  refs.footerEl.classList.toggle(Theme.LIGHT);
-  refs.footerEl.classList.toggle(Theme.DARK);
+  footer.classList.toggle(Theme.LIGHT);
+  footer.classList.toggle(Theme.DARK);
 
-  refs.modal.movieWrap.classList.toggle(Theme.LIGHT);
-  refs.modal.movieWrap.classList.toggle(Theme.DARK);
+  modalRefs.movieWrap.classList.toggle(Theme.LIGHT);
+  modalRefs.movieWrap.classList.toggle(Theme.DARK);
 
   if (e.currentTarget.checked) {
     localStorage.setItem('theme', Theme.DARK);
