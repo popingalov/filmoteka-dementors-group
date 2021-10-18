@@ -11,13 +11,7 @@ refs.modal.addEventListener('click', closeModal);
 window.addEventListener('keydown', modalCloseByEsc);
 
 
-// function onMovieClick(e) {
-//   if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
-//     return;
-//   }
-//   openModal();
-// }
-// // открытие модалки
+
 function openModal() {
   refs.modal.classList.remove('is-hidden');
 }
@@ -39,16 +33,40 @@ function modalCloseByEsc(e) {
   }
 }
 
+ 
  function filmClick(e) {
-   if (e.target.nodeName !== 'LI' & e.target.nodeName !== 'IMG') {
-    return 
-  }
-  const dataId = e.target.dataset.id
+  const dataId = e.target.closest('li').dataset.id
   const film = apiService.getBildFilm(dataId)
-    film.then(response => {
-      console.log(response)
+  film.then(response => {
     modalWindow.innerHTML = `${filmCard(response)}`
     openModal()
-})
-filmClick()
+    newFunction();
+    //  if (JSON.parse(localStorage.getItem('watched')).find((e) => e == response.id)) {
+    //    console.log('awdawd');
+    //  }
+     
+  })
+  function newFunction() {
+    const watchedBtn = document.querySelector('.modal__button-watched')
+    film.then(data => {
+      const itemParse = JSON.parse(localStorage.getItem('watched'))
+
+      function local(e) {
+        if (e.target.textContent == 'Remove from Watched') {
+          const findFilm = JSON.parse(localStorage.getItem('watched')).filter(
+          film => film.id !== data.id)
+          localStorage.setItem('watched', JSON.stringify(findFilm))
+          e.target.textContent = 'Add to Watched'
+          return
+        }
+         
+        e.target.textContent = 'Remove from Watched'
+         
+        itemParse.push(data)
+        localStorage.setItem('watched', JSON.stringify(itemParse))
+      }
+      const onClickBtnWatch = watchedBtn.addEventListener('click', local)
+        // const onClickBtnWatch = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })
+    })
+  }
 }
