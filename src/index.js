@@ -13,6 +13,7 @@ import modal from './js/modal';
 import './js/forTeamModal.js';
 import './js/mylibrary';
 import './js/slider.js';
+import './js/fireBaseTest.js';
 /* const apiService = new ApiService(); */
 
 const gallery = document.querySelector('.gallery');
