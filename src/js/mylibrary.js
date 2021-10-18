@@ -18,23 +18,23 @@ function navClick(e) {
     e.target.textContent == 'Filmoteka' ||
     e.target.textContent == 'Home'
   ) {
+    refs.header.classList.remove('library');
+    refs.libraryWrapper.classList.add('visually-hidden');
     refs.libraryBtn.classList.remove('current');
     refs.homeBtn.classList.add('current');
     refs.searchForm.classList.remove('is-hidden');
-    refs.sliderContainer.classList.remove('is-hidden');
-    refs.watchedBtn.classList.add('is-hidden');
-    refs.queueBtn.classList.add('is-hidden');
-    libraryRebder();
+    refs.gallery.innerHTML = '';
+    render();
     return;
   }
   if (e.target.textContent == 'My library') {
     refs.gallery.innerHTML = '';
+    libraryRebder();
+    refs.header.classList.add('library');
+    refs.libraryWrapper.classList.remove('visually-hidden');
     refs.libraryBtn.classList.add('current');
     refs.homeBtn.classList.remove('current');
     refs.searchForm.classList.add('is-hidden');
-    refs.sliderContainer.classList.add('is-hidden');
-    refs.watchedBtn.classList.remove('is-hidden');
-    refs.queueBtn.classList.remove('is-hidden');
     console.log('yep');
   }
 }
@@ -63,6 +63,14 @@ function libraryRebder() {
   console.log(localMass);
   startRender(localMass.results);
 }
+
+async function render() {
+  const massForRender = await apiService.getTrend();
+
+  refs.gallery.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
+  console.log(massForRender);
+}
+
 /* async function startRender(mass) {
   const massForRender = await mass;
   const tryGenres = await apiService.getGenre();
