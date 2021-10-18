@@ -2,7 +2,7 @@ const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-
+import refs from './refs.js';
 const body = document.querySelector('body');
 const checkbox = document.querySelector('.theme-switch__toggle');
 
@@ -15,21 +15,18 @@ if (saveTheme === Theme.DARK) {
   modalRefs.movieWrap.classList.toggle(Theme.DARK);
 }
 
-
-
 (function openLastSavedTheme() {
-   let defaultTheme = body.classList.add(Theme.LIGHT);
+  let defaultTheme = body.classList.add(Theme.LIGHT);
 
-   if (saveTheme !== null) {
-      defaultTheme = body.classList.remove(Theme.LIGHT);
-     body.classList.add(saveTheme);
+  if (saveTheme !== null) {
+    defaultTheme = body.classList.remove(Theme.LIGHT);
+    body.classList.add(saveTheme);
 
-      if (body.classList.contains(Theme.DARK)) {
-         checkbox.checked = true;
-      }
-   }
-
-}());
+    if (body.classList.contains(Theme.DARK)) {
+      checkbox.checked = true;
+    }
+  }
+})();
 
 checkbox.addEventListener('click', changeTheme);
 
@@ -49,4 +46,3 @@ function changeTheme(e) {
     localStorage.setItem('theme', Theme.LIGHT);
   }
 }
-
