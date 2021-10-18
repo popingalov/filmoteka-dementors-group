@@ -5,12 +5,9 @@ import { get } from 'jquery';
 
 const modalWindow = document.querySelector('.content')
 
-
 refs.gallery.addEventListener('click', filmClick);
 refs.modal.addEventListener('click', closeModal);
 window.addEventListener('keydown', modalCloseByEsc);
-
-
 
 function openModal() {
   refs.modal.classList.remove('is-hidden');
@@ -33,24 +30,23 @@ function modalCloseByEsc(e) {
   }
 }
 
- 
- function filmClick(e) {
-  const dataId = e.target.closest('li').dataset.id
-  const film = apiService.getBildFilm(dataId)
+
+function filmClick(e) {
+const dataId = e.target.closest('li').dataset.id
+const film = apiService.getBildFilm(dataId)
   film.then(response => {
     modalWindow.innerHTML = `${filmCard(response)}`
     openModal()
-    newFunction();
-    //  if (JSON.parse(localStorage.getItem('watched')).find((e) => e == response.id)) {
-    //    console.log('awdawd');
-    //  }
-     
+    newFunction()
+    newFunction2()
+     if (JSON.parse(localStorage.getItem('watched')).find((e) => e !== response.id)) {
+       console.log('awdawd');
+     }
   })
   function newFunction() {
     const watchedBtn = document.querySelector('.modal__button-watched')
     film.then(data => {
       const itemParse = JSON.parse(localStorage.getItem('watched'))
-
       function local(e) {
         if (e.target.textContent == 'Remove from Watched') {
           const findFilm = JSON.parse(localStorage.getItem('watched')).filter(
@@ -67,6 +63,28 @@ function modalCloseByEsc(e) {
       }
       const onClickBtnWatch = watchedBtn.addEventListener('click', local)
         // const onClickBtnWatch = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })
+    })
+  }
+  function newFunction2() {
+    const queueBtn = document.querySelector('.modal__button-queue')
+    film.then(data => {
+      const itemParse = JSON.parse(localStorage.getItem('queue'))
+
+      function local(e) {
+        if (e.target.textContent == 'Remove from queue') {
+          const findFilm = JSON.parse(localStorage.getItem('queue')).filter(
+          film => film.id !== data.id)
+          localStorage.setItem('queue', JSON.stringify(findFilm))
+          e.target.textContent = 'Add to queue'
+          return
+        }
+        e.target.textContent = 'Remove from queue'
+         
+        itemParse.push(data)
+        localStorage.setItem('queue', JSON.stringify(itemParse))
+      }
+      const onClickBtnWatch = queueBtn.addEventListener('click', local)
+        // const queueBtn = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })
     })
   }
 }
