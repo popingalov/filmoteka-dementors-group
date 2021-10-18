@@ -1,15 +1,31 @@
 body.light-theme {
   background-color: var(--color-white);
+  color: var(--color-black);
 }
-///согласовать классы модального окна, пагинации, команды,
+
 body.dark-theme {
-  background-color: #000000;
-  footer {
+  background-color: #242121;
+  color: var(--color-white);
+}
+
+footer.light-theme {
+  background-color: var(--color-light);
+  color: var(--color-grey);
+}
+
+footer.dark-theme {
+  background-color: #1c1c1c;
+  color: var(--color-accent);
+}
+
+body.dark-theme {
+  background-color: #242121;
+  .footer__container {
     border-top: solid 1px rgb(68, 67, 67);
-    background-color: #000000;
+    background-color: var(--color-black);
   }
   .gallery-list {
-    h3 {
+    h2 {
       color: var(--color-white);
     }
 
@@ -28,72 +44,76 @@ body.dark-theme {
       }
     }
   }
-  .pagination__container_pages {
-    .pag-arrow {
+  .tui-pagination {
+    a {
+      color: var(--color-accent);
       background-color: rgb(68, 67, 67);
-      &:hover {
-        background-color: #ff6b08;
-        color: var(--color-white);
 
-        border-radius: 5px;
+      &:hover {
+        //background-color: var(--color-accent);
+        color: var(--color-white);
+        //border-radius: 0px;
       }
     }
   }
-  .pagenumbers {
+  /*  .pagenumbers {
     button,
     div {
       color: var(--color-white);
     }
-  }
-  .footer__page,
-  .up-btn__icon {
+  }*/
+  .footer__container {
     color: var(--color-white);
-
-    fill: white;
+    fill: var(--color-white);
     &:hover,
     &:focus {
       transition: fill 250ms linear, transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      fill: #ff6b08;
+      fill: var(--color-accent);
     }
   }
-  .modal-film-card {
-    background-color: #000000;
-    color: var(--color-white);
 
-    a {
+  .modal {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    .modal-icon {
+      fill: var(--color-white);
+      background-color: var(--color-black);
+    }
+    h3,
+    p,
+    span {
       color: var(--color-white);
     }
-    .trailer-link__svg {
-      fill: white;
-    }
-    .modal__info-list-data-vc {
-      color: #000000;
+    .modal-list__count {
+      color: var(--color-black);
     }
   }
-  .team__wrapper {
-    background-color: #000000;
-    color: var(--color-white);
 
+  .modal-window {
+    background-color: var(--color-black);
+    color: var(--color-white);
     .team__image {
-      box-shadow: 0px -2px 32px 1px #ff6b08;
+      box-shadow: 0px -2px 32px 1px var(--color-accent);
     }
     .logo__icon {
-      fill: white;
+      fill: var(--color-white);
     }
   }
 }
 
+///согласовать классы модального окна, пагинации, команды,
+
 .theme-switch {
   //position: absolute;
   right: 0;
-  top: 20px;
+  //top: 20px;
   display: flex;
   justify-content: flex-end;
-  padding: 40px 0px;
+  padding: 10px 0px;
 
   @media screen and (min-width: 767px) {
-    //  top: 150px;
-    padding: 30px 0px;
+    //top: 150px;
+    padding: 10px 0px;
   }
 }
 .theme-switch__control {

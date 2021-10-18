@@ -1,5 +1,6 @@
 //Если вы хотите импортировать Swiper со всеми модулями (связкой), то его следует импортировать из swiper/bundle:
-import Swiper from 'swiper/bundle';
+//import Swiper from 'swiper/bundle';
+//import 'swiper/css/bundle';
 import 'swiper/swiper-bundle.css';
 
 //----??????----

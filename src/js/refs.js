@@ -11,7 +11,7 @@ export default {
   searchForm: document.querySelector('.search-form'),
   searchInput: document.querySelector('.search-field'),
   gallery: document.querySelector('.gallery'),
-  themeSwitch: document.querySelector('.theme-switch__control'),
+  //themeSwitch: document.querySelector('.theme-switch__control'),
   homeBtn: document.querySelector('[data-button="home"]'),
   libraryBtn: document.querySelector('.library__button'),
   logo: document.querySelector('.js-logo'),
@@ -23,4 +23,6 @@ export default {
   modalTeam: document.querySelector('.backdrop'),
   nav: document.querySelector('.site-nav'),
 //sliderContainer:document.querySelector('.swiper-wrapper');
+bodyEl: document.querySelector('body'),
+footerEl: document.querySelector('.footer'),
 };
