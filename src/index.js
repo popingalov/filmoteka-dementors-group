@@ -74,7 +74,7 @@ async function startRenderPromis(mass) {
 }
 const massTrend = apiService.getTrend();
 startRenderPromis(massTrend);
-renderInLocalSave(massTrend);
+/* renderInLocalSave(massTrend);
 async function renderInLocalSave(mass) {
   const massForRender = await mass;
 
@@ -95,7 +95,7 @@ async function renderInLocalSave(mass) {
   });
   localStorage.setItem('startRender', JSON.stringify(massForRender));
 }
-
+ */
 export { startRender, startRenderPromis };
 
 if (!JSON.parse(localStorage.getItem('watched'))) {

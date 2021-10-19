@@ -2,51 +2,71 @@ import apiService from './apiService';
 import refs from './refs';
 import testHbs from '../templates/my-library-rander.hbs';
 /* import { startRender } from '../index'; */
-import refrs from './refs';
+// import refs from './refs';
 
 /* localStorage.setItem('watcher', JSON.stringify(books));
 refs.libraryBtn.addEventListener('click', localRender); */
+const queue = document.querySelector('.queue');
+const watched = document.querySelector('.watched');
 
 refs.nav.addEventListener('click', navClick);
 refs.watchedBtn.addEventListener('click', libraryRebder);
 
+watched.addEventListener('click', watchedBtnClick);
+queue.addEventListener('click', queueBtnClick);
+
+function watchedBtnClick() {
+  watched.classList.add('active');
+  queue.classList.remove('active');
+  refs.watchedGallery.classList.remove('is-hidden');
+  refs.queueGallery.classList.add('is-hidden');
+  libraryRebder();
+}
+function queueBtnClick() {
+  refs.watchedGallery.classList.add('is-hidden');
+  refs.queueGallery.classList.remove('is-hidden');
+  queue.classList.add('active');
+  watched.classList.remove('active');
+  libraryQueueRebder();
+}
+
 function navClick(e) {
-  e.preventDefault();
+  /*  e.preventDefault(); */
   console.dir(e.target.textContent);
-  if (
-    e.target.nodeName == 'svg' ||
-    e.target.nodeName == 'use' ||
-    e.target.textContent == 'Filmoteka' ||
-    e.target.textContent == 'Home'
-  ) {
+  if (e.target.textContent == 'Home') {
     refs.header.classList.remove('library');
     refs.libraryWrapper.classList.add('visually-hidden');
     refs.libraryBtn.classList.remove('current');
     refs.homeBtn.classList.add('current');
     refs.searchForm.classList.remove('is-hidden');
-    refs.gallery.innerHTML = '';
-    render();
+    document.getElementById('tui-pagination-container').classList.remove('is-hidden');
+    refs.watchedGallery.classList.add('is-hidden');
+    refs.queueGallery.classList.add('is-hidden');
+    refs.gallery.classList.remove('is-hidden');
     return;
   }
   if (e.target.textContent == 'My library') {
-    refs.gallery.innerHTML = '';
-    libraryRebder();
+    watchedBtnClick();
     refs.header.classList.add('library');
     refs.libraryWrapper.classList.remove('visually-hidden');
     refs.libraryBtn.classList.add('current');
     refs.homeBtn.classList.remove('current');
     refs.searchForm.classList.add('is-hidden');
-    console.log('yep');
+    refs.gallery.classList.add('is-hidden');
+    refs.watchedGallery.classList.remove('is-hidden');
+    refs.queueGallery.classList.add('is-hidden');
+    document.getElementById('tui-pagination-container').classList.add('is-hidden');
+    return;
   }
 }
 
-console.log('asd');
+// console.log('asd');
 function libraryRebder() {
   const localMass = JSON.parse(localStorage.getItem('watched'));
   localMass.forEach((e, i) => {
-    console.log(e.genres);
+    // console.log(e.genres);
     e.genres.forEach((er, ir) => {
-      if (ir == 3) {
+      if (ir >= 3) {
         localMass[i].genres.pop();
         return;
       }
@@ -57,22 +77,41 @@ function libraryRebder() {
     });
   });
 
-  console.log(localMass[0].genres.length);
-  startRender(localMass);
+  // console.log(localMass[0].genres.length);
+  startRender(localMass, refs.watchedGallery);
 }
 
-async function startRender(mass) {
+async function startRender(mass, point) {
   const massForRender = mass;
-  console.log(massForRender);
-  refs.gallery.innerHTML = testHbs(massForRender);
+  point.innerHTML = testHbs(massForRender);
 }
 
-async function render() {
-  const massForRender = await apiService.getTrend();
+function libraryQueueRebder() {
+  const localMass = JSON.parse(localStorage.getItem('queue'));
+  localMass.forEach((e, i) => {
+    // console.log(e.genres);
+    e.genres.forEach((er, ir) => {
+      if (ir >= 3) {
+        localMass[i].genres.pop();
+        return;
+      }
+      if (ir == 2) {
+        localMass[i].genres[ir] = { name: `OTHER` };
+        return;
+      }
+    });
+  });
 
-  refs.gallery.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
-  console.log(massForRender);
+  // console.log(localMass[0].genres.length);
+  startRender(localMass, refs.queueGallery);
 }
+
+/* async function startQueueRender(mass) {
+  const queueRender = mass;
+  console.log(mass);
+  refs.gallery.innerHTML = testHbs(queueRender);
+} */
+// mainpageRender
 
 /* async function startRender(mass) {
   const massForRender = await mass;

@@ -1,73 +1,54 @@
 <header class="page-header--home">
-  <div class="container">
-    <div class="theme-switch">
-      <div class="theme-switch__control">
-        <input
-          class="theme-switch__toggle"
-          type="checkbox"
-          name="theme"
-          id="codepen"
-          aria-label="Переключить между тёмной и светлой темой"
-        />
-        <label aria-hidden="true" class="theme-switch__track" for="codepen">
-          <div class="theme__icon">
-            <span>
-              <svg type="image/svg+xml" class="sunny__icon">
-                <use
-                  type="image/svg+xml"
-                  class=""
-                  alt="icon-moon"
-                  href="./images/icons.svg#icon-moon"
-                ></use>
-              </svg>
-            </span>
-            <span>
-              <svg type="image/svg+xml" class="sunny__icon">
-                <use
-                  type="image/svg+xml"
-                  class=""
-                  alt="icon-sunny"
-                  href="./images/icons.svg#icon-sunny"
-                ></use>
-              </svg>
-            </span>
-          </div>
-        </label>
-      </div>
+    <div class="container">
+        <div class="theme-switch">
+            <div class="theme-switch__control">
+                <input class="theme-switch__toggle" type="checkbox" name="theme" id="codepen"
+                    aria-label="Переключить между тёмной и светлой темой" />
+                <label aria-hidden="true" class="theme-switch__track" for="codepen">
+                    <div class="theme__icon">
+                        <span>
+                            <svg type="image/svg+xml" class="sunny__icon">
+                                <use type="image/svg+xml" class="" alt="icon-moon" href="./images/icons.svg#icon-moon">
+                                </use>
+                            </svg>
+                        </span>
+                        <span>
+                            <svg type="image/svg+xml" class="sunny__icon">
+                                <use type="image/svg+xml" class="" alt="icon-sunny"
+                                    href="./images/icons.svg#icon-sunny"></use>
+                            </svg>
+                        </span>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="site-nav">
+            <a href='./index.html' class="logo">
+                <svg width="24" height="24" class="logo-img">
+                    <use href="./images/icons.svg#icon-logo"></use>
+                </svg>
+                <span class="logo__title">Filmoteka</span>
+            </a>
+            <nav class="site-navigation">
+                <button class="home__button current">Home</button>
+                <button class="library__button">My library</button>
+            </nav>
+        </div>
+        <div class="form">
+            <form class="search-form" id="search-form">
+                <input type="text" name="query" autocomplete="off" placeholder="Search Movies" class="search-field"
+                    id="name" />
+                <label class="form-label" for="name">Search movies</label>
+                <button type="submit" class="search-btn">
+                    <svg class="search-icon" width="12" height="12">
+                        <use href="/images/icons.svg#icon-search"></use>
+                    </svg>
+                </button>
+            </form>
+        </div>
+        <div class="library__wrapper visually-hidden">
+            <button class="btn-action watched active">watched</button>
+            <button class="btn-action queue">queue</button>
+        </div>
     </div>
-    <div class="site-nav">
-      <a class="logo">
-        <svg width="24" height="24" class="logo-img">
-          <use href="./images/icons.svg#icon-logo"></use>
-        </svg>
-        <span class="logo__title">Filmoteka</span>
-      </a>
-      <nav class="site-navigation">
-        <button class="home__button current">Home</button>
-        <button class="library__button">My library</button>
-      </nav>
-    </div>
-    <div class="form">
-      <form class="search-form" id="search-form">
-        <input
-          type="text"
-          name="query"
-          autocomplete="off"
-          placeholder="Search Movies"
-          class="search-field"
-          id="name"
-        />
-        <label class="form-label" for="name">Search movies</label>
-        <button type="submit" class="search-btn">
-          <svg class="search-icon" width="12" height="12">
-            <use href="/images/icons.svg#icon-search"></use>
-          </svg>
-        </button>
-      </form>
-    </div>
-    <div class="library__wrapper visually-hidden">
-      <button class="btn-action watched active">watched</button>
-      <button class="btn-action queue">queue</button>
-    </div>
-  </div>
 </header>

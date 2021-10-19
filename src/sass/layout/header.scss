@@ -229,15 +229,15 @@ input::-webkit-input-placeholder {
   transition: transform 0.4s ease;
 }
 
-.active {
-  background-color: var(--color-accent);
-  border: 1px solid var(--color-accent);
-}
 
 .watched {
   margin-right: 15px;
 }
 
+.active {
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
 //
 ///
 .form {
