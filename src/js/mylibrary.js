@@ -1,7 +1,8 @@
 import apiService from './apiService';
 import refs from './refs';
-import testHbs from '../templates/gallery-homepage.hbs';
-import { startRender } from '../index';
+import testHbs from '../templates/my-library-rander.hbs';
+/* import { startRender } from '../index'; */
+import refrs from './refs';
 
 /* localStorage.setItem('watcher', JSON.stringify(books));
 refs.libraryBtn.addEventListener('click', localRender); */
@@ -41,27 +42,29 @@ function navClick(e) {
 
 console.log('asd');
 function libraryRebder() {
-  const localMass = JSON.parse(localStorage.getItem('startRender'));
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  localMass.results.pop();
-  console.log(localMass);
-  startRender(localMass.results);
+  const localMass = JSON.parse(localStorage.getItem('watched'));
+  localMass.forEach((e, i) => {
+    console.log(e.genres);
+    e.genres.forEach((er, ir) => {
+      if (ir == 3) {
+        localMass[i].genres.pop();
+        return;
+      }
+      if (ir == 2) {
+        localMass[i].genres[ir] = { name: `OTHER` };
+        return;
+      }
+    });
+  });
+
+  console.log(localMass[0].genres.length);
+  startRender(localMass);
+}
+
+async function startRender(mass) {
+  const massForRender = mass;
+  console.log(massForRender);
+  refs.gallery.innerHTML = testHbs(massForRender);
 }
 
 async function render() {
