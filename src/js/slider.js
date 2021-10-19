@@ -1,15 +1,15 @@
 //Если вы хотите импортировать Swiper со всеми модулями (связкой), то его следует импортировать из swiper/bundle:
+
 //import Swiper from 'swiper/bundle';
-//import 'swiper/css/bundle';
 import 'swiper/swiper-bundle.css';
 
 //----??????----
 //import Swiper, {
-// Navigation, Pagination, Scrollbar, Mousewheel, Keyboard,///EffectCoverflow, //} from 'swiper';
+//Navigation, Pagination, Scrollbar, Mousewheel, Keyboard,EffectCoverflow, } /////from 'swiper';
 
-///------test------
+///------test------работает с .swiper    .image-slider
 ///под проект
-const swiper = new Swiper('.image-slider', {
+const swiper = new Swiper('.swiper', {
 //// стрелки
   navigation: {
     nextEl: '.swiper-button-next',
@@ -101,7 +101,7 @@ pageUpDown:true,
       slidesPerView: 1,
     },
     425: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
     768: {
       slidesPerView: 4,
@@ -113,36 +113,33 @@ pageUpDown:true,
 });
 
 
+
 //для проекта
+//import refs from './refs';
+//import apiService from './apiService';
+//import CardSliderTpl from '../templates/slider.hbs';
 
-//import MoviesApiService from '../apiService';
-//import filmsCardSliderTpl from '../../templates/slider.hbs';
-//renderPopular();
 
-//const slContainer = document.querySelector('.swiper-wrapper');
-//const moviesApiService = new MoviesApiService();
-//renderPopular();
 
-//const swiperEl = document.querySelector('.swiper-container').swiper;
+//const sliderContainer = document.querySelector('.swiper-wrapper');
+//const erorrUrl = '';
+//const ApiService = new ApiService();
+//renderTrendy();
 
-//разобраться
-/* async function renderPopular() {
-  try {
-    const movies = await MoviesApiService.fetchTrendingMovies();
-    renderSliderFilms(movies);
-  } catch (err) {
-////можно попробовать вставить видео про ошибку 404
-    console.log(error);
-  }
-}
+//разобраться????
+//async function renderTrendy() {
+//  try {
+//    const movies = await ApiService.fetchTrendingMovies();
+//    renderSliderFilms(movies);
+//  } catch (err) {
+//  }
+//}
 
-//!!!!!!в модальном найти трейлер  - если нет прописать здесь
+//!!!!!!найти трейлер для кнопки .btn-youtube-slider
 
 //рендер слайда
-
-function renderSliderFilms(articles) {
-  slContainer.innerHTML = filmsCardSliderTpl(articles);
-  swiperEl.update();
-  trailer.createTrailerLink(document.querySelectorAll('.btn-youtube-slider'));
-}
-*/
+//function renderSliderFilms(articles) {
+//  sliderContainer.innerHTML = CardSliderTpl(articles);
+// swiperEl.update();
+//trailer.createTrailerLink(document.querySelectorAll('.btn-youtube-slider'));
+//}

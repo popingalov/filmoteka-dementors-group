@@ -24,7 +24,7 @@ export default {
   modalTeam: document.querySelector('.backdrop'),
   nav: document.querySelector('.site-nav'),
 
-//sliderContainer:document.querySelector('.swiper-wrapper');
+//sliderEl: document.querySelector('.slider-wrapper'),
 bodyEl: document.querySelector('body'),
 footerEl: document.querySelector('.footer'),
 
