@@ -47,10 +47,10 @@ function filmClick(e) {
     }
 
     openModal();
-    newFunction();
-    newFunction2();
+    watchedFunction();
+    queueFunction();
   });
-  function newFunction() {
+  function watchedFunction() {
     film.then(data => {
       const watchedBtn = document.querySelector('.modal__button-watched');
       const itemParse = JSON.parse(localStorage.getItem('watched'));
@@ -77,7 +77,7 @@ function filmClick(e) {
       // const onClickBtnWatch = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })
     });
   }
-  function newFunction2() {
+  function queueFunction() {
     const queueBtn = document.querySelector('.modal__button-queue');
     film.then(data => {
       const itemParse = JSON.parse(localStorage.getItem('queue'));
