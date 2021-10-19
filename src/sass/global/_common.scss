@@ -46,6 +46,9 @@ img {
 button {
   cursor: pointer;
 }
+a {
+  text-decoration: none;
+}
 
 .material-icons {
   font-family: 'Material Icons';
@@ -80,6 +83,11 @@ button {
 
 .is-hidden {
   //height: 1px;
+  width: 0px;
+  height: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;

@@ -31,4 +31,6 @@ export default {
   libraryWrapper: document.querySelector('.library__wrapper'),
   watchedBtn: document.querySelector('.watched'),
   queueBtn: document.querySelector('.queue'),
+  watchedGallery: document.querySelector('.watched-gallery'),
+  queueGallery: document.querySelector('.queue-gallery'),
 };
