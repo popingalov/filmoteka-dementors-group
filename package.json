@@ -29,6 +29,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "@pnotify/core": "^5.2.0",
     "@pnotify/countdown": "^5.2.0",
     "@pnotify/mobile": "^5.2.0",

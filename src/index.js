@@ -12,8 +12,14 @@ import './js/filmsPagination';
 import modal from './js/modal';
 import './js/forTeamModal.js';
 import './js/mylibrary';
-import './js/slider.js';
+
+import './js/slider';
+import './js/slider2';
+import './js/scrollUpp';
+
+
 import './js/observer.js'
+
 /* const apiService = new ApiService(); */
 
 const galleryList = document.querySelector('.gallery_list');

@@ -24,11 +24,20 @@ export default {
   closeTeamModalBtn: document.querySelector('.modal-close__btn'),
   modalTeam: document.querySelector('.backdrop'),
   nav: document.querySelector('.site-nav'),
+
+
+
+
+
+
+
+
   header: document.querySelector('.page-header--home'),
   //sliderContainer:document.querySelector('.swiper-wrapper');
   bodyEl: document.querySelector('body'),
   footerEl: document.querySelector('.footer'),
   libraryWrapper: document.querySelector('.library__wrapper'),
+
   watchedBtn: document.querySelector('.watched'),
   queueBtn: document.querySelector('.queue'),
   watchedGallery: document.querySelector('.watched-gallery'),
