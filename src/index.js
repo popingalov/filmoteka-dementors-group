@@ -12,12 +12,17 @@ import './js/filmsPagination';
 import modal from './js/modal';
 import './js/forTeamModal.js';
 import './js/mylibrary';
+
 import './js/slider';
 import './js/slider2';
 import './js/scrollUpp';
+
+
+import './js/observer.js'
+
 /* const apiService = new ApiService(); */
 
-const gallery = document.querySelector('.gallery');
+const galleryList = document.querySelector('.gallery_list');
 
 /* function testOnTrue() {
   const startMass = JSON.parse(localStorage.getItem('startRender'));
@@ -50,7 +55,7 @@ async function startRender(mass) {
       genre[i].genre_ids.pop();
     });
   });
-  gallery.innerHTML = testHbs(massForRender);
+  galleryList.innerHTML = testHbs(massForRender);
 }
 async function startRenderPromis(mass) {
   const massForRender = await mass;
@@ -71,11 +76,11 @@ async function startRenderPromis(mass) {
     });
   });
 
-  gallery.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
+  galleryList.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
 }
 const massTrend = apiService.getTrend();
 startRenderPromis(massTrend);
-renderInLocalSave(massTrend);
+/* renderInLocalSave(massTrend);
 async function renderInLocalSave(mass) {
   const massForRender = await mass;
 
@@ -96,7 +101,7 @@ async function renderInLocalSave(mass) {
   });
   localStorage.setItem('startRender', JSON.stringify(massForRender));
 }
-
+ */
 export { startRender, startRenderPromis };
 
 if (!JSON.parse(localStorage.getItem('watched'))) {
