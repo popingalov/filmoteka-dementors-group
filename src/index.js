@@ -32,6 +32,7 @@ testOnTrue(); */
 
 async function startRender(mass) {
   const massForRender = mass;
+  console.log(massForRender);
   const tryGenres = await apiService.getGenre();
   const genre = massForRender;
   genre.forEach((e, i) => {

@@ -21,12 +21,22 @@ function getFilmsCategories() {
     closeFilmCategories();
   }
 }
+
 function closeFilmCategories() {
   refs.genresContainer.innerHTML =""
   refs.categoriesButton.classList.remove('categories-button-active');
   isActive = true;
 }
 
+const massTrend = apiService.getTrend();
+massTrend.then(data=>console.log(data))
+
 // refs.genresContainer.addEventListener('click', onClick)
+
+
+//https://api.themoviedb.org/3'
+// `${this.filmURL}/genre/movie/list?api_key=${this.key}`
+// '7c9dd50606a07df965d51fc9621e1448'
+
 
 
