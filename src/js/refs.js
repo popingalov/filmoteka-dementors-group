@@ -12,7 +12,7 @@ export default {
   searchInput: document.querySelector('.search-field'),
   gallery: document.querySelector('.gallery'),
   //themeSwitch: document.querySelector('.theme-switch__control'),
-    themeSwitch: document.querySelector('.theme-switch__control'),
+  themeSwitch: document.querySelector('.theme-switch__control'),
   homeBtn: document.querySelector('.home__button'),
   libraryBtn: document.querySelector('.library__button'),
   logo: document.querySelector('.js-logo'),
@@ -23,13 +23,11 @@ export default {
   closeTeamModalBtn: document.querySelector('.modal-close__btn'),
   modalTeam: document.querySelector('.backdrop'),
   nav: document.querySelector('.site-nav'),
-
-//sliderContainer:document.querySelector('.swiper-wrapper');
-bodyEl: document.querySelector('body'),
-footerEl: document.querySelector('.footer'),
-
-
+  header: document.querySelector('.page-header--home'),
+  //sliderContainer:document.querySelector('.swiper-wrapper');
+  bodyEl: document.querySelector('body'),
+  footerEl: document.querySelector('.footer'),
+  libraryWrapper: document.querySelector('.library__wrapper'),
   watchedBtn: document.querySelector('.watched'),
   queueBtn: document.querySelector('.queue'),
-
 };
