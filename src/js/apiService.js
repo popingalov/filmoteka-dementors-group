@@ -4,6 +4,7 @@ class filmsApiProg {
     this.filmURL = 'https://api.themoviedb.org/3';
     this.key = key;
     this.searchQuery = '';
+    this.page = 1
   }
 
   async getSearchFilms() {
@@ -83,6 +84,19 @@ class filmsApiProg {
     } catch (error) {
       console.log(error);
     }
+  }
+async getTrendLoad() {
+    try {
+      const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${this.page}`);
+      const trending = filmesFox.data;
+      this.incrementPage();
+      return trending;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  incrementPage() {
+    this.page += 1;
   }
 }
 export default new filmsApiProg('7c9dd50606a07df965d51fc9621e1448');
