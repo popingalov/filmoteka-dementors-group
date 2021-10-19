@@ -11,6 +11,7 @@ export default {
   searchForm: document.querySelector('.search-form'),
   searchInput: document.querySelector('.search-field'),
   gallery: document.querySelector('.gallery'),
+  galleryList: document.querySelector('.gallery_list'),
   //themeSwitch: document.querySelector('.theme-switch__control'),
   themeSwitch: document.querySelector('.theme-switch__control'),
   homeBtn: document.querySelector('.home__button'),

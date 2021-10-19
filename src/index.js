@@ -13,9 +13,10 @@ import modal from './js/modal';
 import './js/forTeamModal.js';
 import './js/mylibrary';
 import './js/slider.js';
+import './js/observer.js'
 /* const apiService = new ApiService(); */
 
-const gallery = document.querySelector('.gallery');
+const galleryList = document.querySelector('.gallery_list');
 
 /* function testOnTrue() {
   const startMass = JSON.parse(localStorage.getItem('startRender'));
@@ -48,7 +49,7 @@ async function startRender(mass) {
       genre[i].genre_ids.pop();
     });
   });
-  gallery.innerHTML = testHbs(massForRender);
+  galleryList.innerHTML = testHbs(massForRender);
 }
 async function startRenderPromis(mass) {
   const massForRender = await mass;
@@ -69,7 +70,7 @@ async function startRenderPromis(mass) {
     });
   });
 
-  gallery.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
+  galleryList.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
 }
 const massTrend = apiService.getTrend();
 startRenderPromis(massTrend);
