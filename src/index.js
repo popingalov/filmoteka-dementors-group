@@ -17,8 +17,7 @@ import './js/slider';
 import './js/slider2';
 import './js/scrollUpp';
 
-
-import './js/observer.js'
+import './js/observer.js';
 
 /* const apiService = new ApiService(); */
 
