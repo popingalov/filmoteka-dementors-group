@@ -6,6 +6,10 @@ import testHbs from '../templates/my-library-rander.hbs';
 
 /* localStorage.setItem('watcher', JSON.stringify(books));
 refs.libraryBtn.addEventListener('click', localRender); */
+
+const sliderBox = document.querySelector('.slider-box');
+const sliderWrapper = document.querySelector('.slider-wrapper');
+
 const queue = document.querySelector('.queue');
 const watched = document.querySelector('.watched');
 
@@ -43,6 +47,8 @@ function navClick(e) {
     refs.watchedGallery.classList.add('is-hidden');
     refs.queueGallery.classList.add('is-hidden');
     refs.gallery.classList.remove('is-hidden');
+    sliderBox.classList.remove('is-hidden');
+    sliderWrapper.classList.remove('is-hidden');
     return;
   }
   if (e.target.textContent == 'My library') {
@@ -56,6 +62,8 @@ function navClick(e) {
     refs.watchedGallery.classList.remove('is-hidden');
     refs.queueGallery.classList.add('is-hidden');
     document.getElementById('tui-pagination-container').classList.add('is-hidden');
+    sliderBox.classList.add('is-hidden');
+    sliderWrapper.classList.add('is-hidden');
     return;
   }
 }
@@ -79,6 +87,9 @@ function libraryRebder() {
 
   // console.log(localMass[0].genres.length);
   startRender(localMass, refs.watchedGallery);
+  if (localMass.length < 1) {
+    refs.watchedGallery.innerHTML = '<p class="modal__title">You have not added anything yet.</p>';
+  }
 }
 
 async function startRender(mass, point) {
@@ -104,6 +115,9 @@ function libraryQueueRebder() {
 
   // console.log(localMass[0].genres.length);
   startRender(localMass, refs.queueGallery);
+  if (localMass.length < 1) {
+    refs.queueGallery.innerHTML = '<p class="modal__title">You have not added anything yet.</p>';
+  }
 }
 
 /* async function startQueueRender(mass) {
