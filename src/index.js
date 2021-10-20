@@ -17,8 +17,7 @@ import './js/slider';
 import './js/slider2';
 import './js/scrollUpp';
 
-
-import './js/observer.js'
+import './js/observer.js';
 
 /* const apiService = new ApiService(); */
 
@@ -61,7 +60,7 @@ async function startRenderPromis(mass) {
   const massForRender = await mass;
 
   const tryGenres = await apiService.getGenre();
-  localStorage.setItem("genres", JSON.stringify(tryGenres));
+  localStorage.setItem('genres', JSON.stringify(tryGenres));
   const genre = massForRender.results;
   genre.forEach((e, i) => {
     // if (e.release_date) {
