@@ -16,7 +16,7 @@ function callback(entries, observer) {
         if (entry.isIntersecting === true) {
             apiService.getTrendLoad().then((data) => {
                 if (data.page > 1) {
-                    const newMass = startRenderPromis(data)
+                    const newMass = apiService.startRenderPromis(data)
                 ref.galleryList.insertAdjacentHTML('beforeend', tmp(newMass))
                 console.log('hello');
                 }

@@ -1,4 +1,7 @@
 import axios from 'axios';
+import refs from './refs.js'
+import testHbs from '../templates/gallery-homepage.hbs';
+
 class filmsApiProg {
   constructor(key) {
     this.filmURL = 'https://api.themoviedb.org/3';
@@ -98,5 +101,28 @@ async getTrendLoad() {
   incrementPage() {
     this.page += 1;
   }
+
+  async startRenderPromis(mass) {
+  const massForRender = await mass;
+
+  const tryGenres = await this.getGenre();
+  const genre = massForRender.results;
+  genre.forEach((e, i) => {
+    genre[i].release_date = genre[i].release_date.slice(0, 4)
+    e.genre_ids.forEach((er, ir) => {
+      if (ir < 2) {
+        genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
+        return;
+      }
+      if (ir == 2) {
+        genre[i].genre_ids[ir] = ` Other`;
+        return;
+      }
+      genre[i].genre_ids.pop();
+    });
+  });
+
+  refs.galleryList.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
+}
 }
 export default new filmsApiProg('7c9dd50606a07df965d51fc9621e1448');
