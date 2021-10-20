@@ -68,9 +68,16 @@ class RenderFilms {
     return doneResult;
   }
   // render without rating
-  renderHomeCards(films) {
+   renderHomeCards(films) {
     const listFilms = document.querySelector('.list.gallery_list');
     listFilms.innerHTML = "";
+    const genres = JSON.parse(localStorage.getItem("genres"));
+    if (genres) {
+      films.forEach(film => {
+        const newGenreIds = film.genre_ids.map(id => genres[id]);
+        film.genre_ids = [...newGenreIds];
+      });
+    }
     listFilms.insertAdjacentHTML('beforeend', filmsCards(films));
   }
 
