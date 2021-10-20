@@ -13,11 +13,15 @@ import modal from './js/modal';
 import './js/forTeamModal.js';
 import './js/mylibrary';
 
+import './js/filmsCategories'
+
+
 import './js/slider';
 import './js/slider2';
 import './js/scrollUpp';
 
 import './js/observer.js';
+
 
 /* const apiService = new ApiService(); */
 
@@ -39,6 +43,7 @@ testOnTrue(); */
 
 async function startRender(mass) {
   const massForRender = mass;
+  console.log(massForRender);
   const tryGenres = await apiService.getGenre();
   const genre = massForRender;
   genre.forEach((e, i) => {

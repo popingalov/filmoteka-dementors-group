@@ -68,7 +68,7 @@ function navClick(e) {
   }
 }
 
-// console.log('asd');
+
 function libraryRebder() {
   const localMass = JSON.parse(localStorage.getItem('watched'));
   localMass.forEach((e, i) => {
