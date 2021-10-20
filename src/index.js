@@ -52,6 +52,7 @@ async function startRenderPromis(mass) {
   const massForRender = await mass;
 
   const tryGenres = await apiService.getGenre();
+  localStorage.setItem("genres", JSON.stringify(tryGenres));
   const genre = massForRender.results;
   genre.forEach((e, i) => {
     e.genre_ids.forEach((er, ir) => {
