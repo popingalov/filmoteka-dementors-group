@@ -22,7 +22,7 @@
         </li>
         <li class="modal-list__item">
             <p class="modal-list__text">Genre</p>{{#each genres}}
-            <span class="modal-list__span list">{{this.name}}, </span>
+            <span class="modal-list__span list">{{this.name}}{{#unless @last}},{{/unless}} </span>
             {{/each}}
         </li>
     </ul>

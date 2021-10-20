@@ -1,0 +1,36 @@
+.scroll-up {
+  position: fixed;
+  display: none;
+  bottom: 195px;
+  right: 20px;
+  z-index: 30;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 1px 8px 3px rgba(165, 165, 165, 0.6);
+  line-height: 30px;
+  background: #ff6b08;
+  background-image: url('../images/scrollUp.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    right: 150px;
+    bottom: 50px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    right: 50px;
+    bottom: 30px;
+  }
+}
+
+.scroll-up:hover {
+  opacity: 0.7;
+}
+
+.scroll-up-show {
+  display: block;
+}
