@@ -63,13 +63,16 @@ async function startRenderPromis(mass) {
   const tryGenres = await apiService.getGenre();
   const genre = massForRender.results;
   genre.forEach((e, i) => {
+    // if (e.release_date) {
+    //   return e.release_date.slice(0, 4)
+    // }
     e.genre_ids.forEach((er, ir) => {
       if (ir < 2) {
         genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
         return;
       }
       if (ir == 2) {
-        genre[i].genre_ids[ir] = `OTHER`;
+        genre[i].genre_ids[ir] = ` Other`;
         return;
       }
       genre[i].genre_ids.pop();
