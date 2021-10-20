@@ -1,12 +1,40 @@
 import axios from 'axios';
+import refs from './refs.js'
+import tmp from '../templates/gallery-homepage.hbs'
+
 class filmsApiProg {
   constructor(key) {
     this.filmURL = 'https://api.themoviedb.org/3';
     this.key = key;
     this.searchQuery = '';
     this.page = 1
+    this.search = `${this.filmURL}/trending/movie/day?api_key=${this.key}`
   }
-
+  async changeSearch() {
+    this.search = `${this.filmURL}/search/movie?api_key=${this.key}&query=${this.searchQuery}`;
+  }
+  async renderObserver() {
+    const massForRender = await axios.get(`${this.search}&page=${this.page}`);
+    const newMass = massForRender.data;
+    const tryGenres = await this.getGenre();
+    const genre = newMass.results;
+    genre.forEach((e, i) => {
+          genre[i].release_date = genre[i].release_date.slice(0, 4)
+      e.genre_ids.forEach((er, ir) => {
+        if (ir < 2) {
+          genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
+          return;
+        }
+        if (ir == 2) {
+          genre[i].genre_ids[ir] = ` Other`;
+          return;
+        }
+        genre[i].genre_ids.pop();
+      });
+    });
+    console.log(genre);
+    refs.galleryList.insertAdjacentHTML('beforeend', tmp(genre));
+  }
   async getSearchFilms() {
     try {
       const filmesFox = await axios.get(
@@ -97,6 +125,29 @@ async getTrendLoad() {
   }
   incrementPage() {
     this.page += 1;
+  }
+
+  async startRenderPromis(mass) {
+  const massForRender = await mass;
+
+  const tryGenres = await this.getGenre();
+  const genre = massForRender.results;
+  genre.forEach((e, i) => {
+    genre[i].release_date = genre[i].release_date.slice(0, 4)
+    e.genre_ids.forEach((er, ir) => {
+      if (ir < 2) {
+        genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
+        return;
+      }
+      if (ir == 2) {
+        genre[i].genre_ids[ir] = ` Other`;
+        return;
+      }
+      genre[i].genre_ids.pop();
+    });
+  });
+
+  refs.galleryList.insertAdjacentHTML('beforeend', tmp(massForRender.results));
   }
 }
 export default new filmsApiProg('7c9dd50606a07df965d51fc9621e1448');
