@@ -25,7 +25,7 @@ function createTrailerLink(elementRef) {
       })
       .catch(() => {
         const instance = basicLightbox.create(`
-    <iframe width="560" height="315" src='https://www.youtube.com/watch?v=D0-SB2XhtcQ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src='https://www.youtube.com/embed/Scxs7L0vhZ4' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       `);
 
         instance.show();
