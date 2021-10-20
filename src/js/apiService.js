@@ -1,10 +1,12 @@
 import axios from 'axios';
+import refs from './refs.js';
+import testHbs from '../templates/gallery-homepage.hbs';
 class filmsApiProg {
   constructor(key) {
     this.filmURL = 'https://api.themoviedb.org/3';
     this.key = key;
     this.searchQuery = '';
-    this.page = 1
+    this.page = 1;
   }
 
   async getSearchFilms() {
@@ -22,7 +24,9 @@ class filmsApiProg {
 
   async getTrend(page = 1) {
     try {
-      const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${page}`);
+      const filmesFox = await axios.get(
+        `${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${page}`,
+      );
       const trending = filmesFox.data;
       return trending;
     } catch (error) {
@@ -85,9 +89,11 @@ class filmsApiProg {
       console.log(error);
     }
   }
-async getTrendLoad() {
+  async getTrendLoad() {
     try {
-      const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${this.page}`);
+      const filmesFox = await axios.get(
+        `${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${this.page}`,
+      );
       const trending = filmesFox.data;
       this.incrementPage();
       return trending;
@@ -97,6 +103,30 @@ async getTrendLoad() {
   }
   incrementPage() {
     this.page += 1;
+  }
+  async startRenderPromis(mass) {
+    const massForRender = await mass;
+
+    const tryGenres = await this.getGenre();
+    const genre = massForRender.results;
+    genre.forEach((e, i) => {
+      // if (e.release_date) {
+      //   return e.release_date.slice(0, 4)
+      // }
+      e.genre_ids.forEach((er, ir) => {
+        if (ir < 2) {
+          genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
+          return;
+        }
+        if (ir == 2) {
+          genre[i].genre_ids[ir] = ` Other`;
+          return;
+        }
+        genre[i].genre_ids.pop();
+      });
+    });
+
+    refs.galleryList.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
   }
 }
 export default new filmsApiProg('7c9dd50606a07df965d51fc9621e1448');

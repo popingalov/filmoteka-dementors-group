@@ -17,12 +17,9 @@ import './js/slider';
 import './js/slider2';
 import './js/scrollUpp';
 
-
-import './js/observer.js'
-
+import './js/observer.js';
+import apiserver from './js/apiService.js';
 /* const apiService = new ApiService(); */
-
-const galleryList = document.querySelector('.gallery_list');
 
 /* function testOnTrue() {
   const startMass = JSON.parse(localStorage.getItem('startRender'));
@@ -57,32 +54,8 @@ async function startRender(mass) {
   });
   galleryList.innerHTML = testHbs(massForRender);
 }
-async function startRenderPromis(mass) {
-  const massForRender = await mass;
-
-  const tryGenres = await apiService.getGenre();
-  const genre = massForRender.results;
-  genre.forEach((e, i) => {
-    // if (e.release_date) {
-    //   return e.release_date.slice(0, 4)
-    // }
-    e.genre_ids.forEach((er, ir) => {
-      if (ir < 2) {
-        genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
-        return;
-      }
-      if (ir == 2) {
-        genre[i].genre_ids[ir] = ` Other`;
-        return;
-      }
-      genre[i].genre_ids.pop();
-    });
-  });
-
-  galleryList.insertAdjacentHTML('beforeend', testHbs(massForRender.results));
-}
 const massTrend = apiService.getTrend();
-startRenderPromis(massTrend);
+apiserver.startRenderPromis(massTrend);
 /* renderInLocalSave(massTrend);
 async function renderInLocalSave(mass) {
   const massForRender = await mass;
@@ -105,7 +78,7 @@ async function renderInLocalSave(mass) {
   localStorage.setItem('startRender', JSON.stringify(massForRender));
 }
  */
-export { startRender, startRenderPromis };
+export { startRender };
 
 if (!JSON.parse(localStorage.getItem('watched'))) {
   localStorage.setItem('watched', JSON.stringify([]));
