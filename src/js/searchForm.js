@@ -29,6 +29,7 @@ function onSearch(event) {
 async function markupQuery() {
   const tryThis = await apiService.getSearchFilms();
   const fixGanr = apiService.startRenderPromis(tryThis);
+  apiService.changeSearch();
   if (tryThis.total_results === 0) {
     return alert(notificationOptions.notMachResults);
   }
