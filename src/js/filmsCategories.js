@@ -12,11 +12,18 @@ function getFilmsCategories() {
     isActive = false;
     refs.genresContainer.classList.remove('hidden');
     refs.categoriesButton.classList.add('categories-button-active');
-    const tryGenres = apiService.getGenre();
-    tryGenres.then(response => {
-      const categoriesMarkUp = filmCategoriesTpl(response);
-      refs.genresContainer.insertAdjacentHTML('beforeend', categoriesMarkUp);
-    });
+    fetch(`${apiService.filmURL}/genre/movie/list?api_key=${apiService.key}`).then(response => {
+    return response.json()
+}).then(data => {
+    
+    const categoriesMarkUp = filmCategoriesTpl(data.genres);
+    refs.genresContainer.insertAdjacentHTML('beforeend', categoriesMarkUp);
+})
+      // const tryGenres = apiService.getGenre();
+    //   tryGenres.then(response => {
+    //   const categoriesMarkUp = filmCategoriesTpl(response);
+    //   refs.genresContainer.insertAdjacentHTML('beforeend', categoriesMarkUp);
+    // });
   } else {
     closeFilmCategories();
   }
@@ -28,15 +35,22 @@ function closeFilmCategories() {
   isActive = true;
 }
 
-const massTrend = apiService.getTrend();
-massTrend.then(data=>console.log(data))
-
-// refs.genresContainer.addEventListener('click', onClick)
 
 
-//https://api.themoviedb.org/3'
-// `${this.filmURL}/genre/movie/list?api_key=${this.key}`
-// '7c9dd50606a07df965d51fc9621e1448'
+refs.genresContainer.addEventListener('click', onClick)
+
+
+function onClick(e) {
+    console.log(e.target);
+    if (e.target.nodeName !== "P") {
+        return
+    }
+    const genreId = e.target.dataset.genresid;
+    fetch(`${this.filmURL}/discover/movie?api_key=7c9dd50606a07df965d51fc9621e1448&with_genres=18`).then(response => {
+        console.log(response)
+    })
+    
+}
 
 
 
