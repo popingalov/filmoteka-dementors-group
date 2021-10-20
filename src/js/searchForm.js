@@ -8,7 +8,7 @@ import '@pnotify/mobile/dist/PNotifyMobile.css';
 import '@pnotify/countdown/dist/PNotifyCountdown.css';
 import { alert } from '@pnotify/core';
 import notificationOptions from './notificationSettings.js';
-import { startRenderPromis } from '../index';
+
 refs.searchForm.addEventListener('submit', onSearch);
 
 function onSearch(event) {
@@ -17,11 +17,19 @@ function onSearch(event) {
   if (apiService.searchQuery.trim() !== '') {
     apiService.getSearchFilms();
     refs.searchForm.reset();
-    refs.gallery.innerHTML = '';
+    refs.galleryList.innerHTML = '';
     const mass = apiService.getSearchFilms();
     console.log(mass);
-    startRenderPromis(mass);
+    markupQuery();
   } else {
     return alert(notificationOptions.incorrectQuery);
+  }
+}
+
+async function markupQuery() {
+  const tryThis = await apiService.getSearchFilms();
+  refs.galleryList.insertAdjacentHTML('beforeend', testHbs(tryThis.results));
+  if (tryThis.total_results === 0) {
+    return alert(notificationOptions.notMachResults);
   }
 }
