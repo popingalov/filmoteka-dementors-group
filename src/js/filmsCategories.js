@@ -46,7 +46,7 @@ function onClick(e) {
         return
     }
     const genreId = e.target.dataset.genresid;
-    fetch(`${this.filmURL}/discover/movie?api_key=7c9dd50606a07df965d51fc9621e1448&with_genres=18`).then(response => {
+    fetch(`${apiService.filmURL}/discover/movie?api_key=7c9dd50606a07df965d51fc9621e1448&with_genres=${genreId}`).then(response => {
         console.log(response)
     })
     
