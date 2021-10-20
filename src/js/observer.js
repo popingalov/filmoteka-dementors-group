@@ -13,8 +13,7 @@ function callback(entries, observer) {
     if (entry.isIntersecting === true) {
       apiService.getTrendLoad().then(data => {
         if (data.page > 1) {
-          const newMass = apiService.startRenderPromis(data);
-          ref.galleryList.insertAdjacentHTML('beforeend', tmp(newMass));
+          setTimeout(500, apiService.renderObserver());
           console.log('hello');
         }
       });
