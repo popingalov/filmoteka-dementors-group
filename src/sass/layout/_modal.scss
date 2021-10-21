@@ -4,6 +4,7 @@
   width: 290px;
   margin-left: auto;
   margin-right: auto;
+   transition: var(--transition-function) var(--timing-function);
   @media screen and (min-width: 768px) {
     transform: translate(-50%, -50%) scale(1);
     background: var(--color-white);
@@ -146,9 +147,7 @@
 }
 
 .modal__button {
-  padding: 1px 5px;
-  width: 112px;
-  height: 44px;
+  padding: 12px 8px;
   background-color: var(--color-white);
   border: black 1px solid;
   color: var(--color-black);
@@ -159,10 +158,9 @@
   font-size: 12px;
   line-height: 1.33;
   text-transform: uppercase;
+   transition: var(--transition-function) var(--timing-function);
   @media screen and (min-width: 768px) {
-    width: 125px;
-    height: 44px;
-    padding: 14px 10px;
+     padding: 12px 10px;
     margin-right: 15px;
   }
   @media screen and (min-width: 1024px) {
@@ -175,13 +173,13 @@
   color: var(--color-white);
   border: transparent;
   background-color: var(--color-accent);
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .modal__button-queue:hover {
   color: var(--color-white);
   border: transparent;
   background-color: var(--color-accent);
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .modal__button-close {
   position: absolute;
