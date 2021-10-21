@@ -9,7 +9,7 @@ renderTrendy();
 const glide = new Glide('.glide', {
   type: 'slider',
   startAt: 0,
-  perView: 8,
+  perView: 5,
   autoplay: 2000,
   hoverpause: true,
   bound: true,
