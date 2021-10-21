@@ -32,7 +32,6 @@ class filmsApiProg {
         genre[i].genre_ids.pop();
       });
     });
-    console.log(genre);
     refs.galleryList.insertAdjacentHTML('beforeend', tmp(genre));
   }
   async getSearchFilms() {
