@@ -57,8 +57,8 @@ async function startRender(mass) {
   galleryList.innerHTML = testHbs(massForRender);
 }
 
-// const massTrend = apiService.getTrend();
-// apiService.startRenderPromis(massTrend);
+const massTrend = apiService.getTrend();
+apiService.startRenderPromis(massTrend);
 /* renderInLocalSave(massTrend);
 async function renderInLocalSave(mass) {
   const massForRender = await mass;
