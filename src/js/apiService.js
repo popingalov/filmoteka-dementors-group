@@ -10,6 +10,7 @@ class filmsApiProg {
     this.page = 1;
     this.search = `${this.filmURL}/trending/movie/day?api_key=${this.key}`;
     this.genreId = 1;
+    this.loader = document.querySelector('.loader');
   }
   changeSearch() {
     this.search = `${this.filmURL}/search/movie?api_key=${this.key}&query=${this.searchQuery}`;
@@ -17,16 +18,13 @@ class filmsApiProg {
 
   saveganresId(id) {
     this.genreId = id;
-    console.log(id);
   }
   changeUrlGanr() {
     this.search = `${this.filmURL}/discover/movie?api_key=${this.key}&with_genres=${this.genreId}`;
-    console.log(this.search);
   }
   async renderObserver() {
-    console.log(this.genreId, this.search);
+    this.loader.classList.remove('is-hidden');
     const massForRender = await axios.get(`${this.search}&page=${this.page}`);
-    console.log(this.genreId, this.search);
     const newMass = massForRender.data;
     const tryGenres = await this.getGenre();
     const genre = newMass.results;
@@ -45,6 +43,7 @@ class filmsApiProg {
       });
     });
     refs.galleryList.insertAdjacentHTML('beforeend', tmp(genre));
+    setTimeout(500,this.loader.classList.add('is-hidden'));
   }
   async getSearchFilms() {
     try {
