@@ -90,6 +90,7 @@
   //display: flex;
   //opacity: 1;
   transform: translatey(0);
+  transition: transform var(--transition-function) var(--timing-function);
 }
 
 .overlay {
@@ -118,6 +119,7 @@
   background-color: transparent;
 }
 
+
 .glide__arrow{
   opacity: 0.5;
     transition: var(--transition-function) var(--timing-function);
@@ -127,3 +129,9 @@
     opacity: 1;
   }
 }
+
+.btn-youtube-slider:hover {
+  transform: scale(1.5);
+  transition: transform var(--transition-function) var(--timing-function);
+}
+

@@ -36,6 +36,16 @@
     margin-bottom: 20px;
   }
 }
+.gallery_img {
+  border-radius: 5px;
+}
+
+.gallery_card:hover,
+.gallery_card:focus {
+  //transform:rotate(-1deg);
+  transform: scale(1.1);
+  transition: transform var(--transition-function) var(--timing-function);
+}
 
 .gallery_title {
   font-size: 12px;

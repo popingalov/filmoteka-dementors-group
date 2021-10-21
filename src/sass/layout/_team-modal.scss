@@ -21,6 +21,7 @@
 }
 .modal-window {
   transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--transition-function) var(--timing-function);
   background: var(--color-white);
   position: absolute;
   top: 50%;
@@ -62,6 +63,11 @@
   border: none;
   box-sizing: border-box;
 }
+.modal-close__btn:hover,
+.modal-close__btn:focus {
+  transform: scale(1.3);
+  transition: transform var(--transition-function) var(--timing-function);
+}
 
 .team_container {
   padding-top: 15px;
@@ -98,6 +104,8 @@
   .card &:hover {
     transform: scale(1.2);
     opacity: 1;
+    transition: transform var(--transition-function) var(--timing-function),
+      opacity var(--transition-function) var(--timing-function);
   }
   @media screen and (min-width: 1024px) {
     object-fit: cover;
@@ -120,6 +128,7 @@
   border-radius: 50%;
   &:hover {
     transform: scale(1.5);
+    transition: transform var(--transition-function) var(--timing-function);
   }
 }
 .slick-next:before,
