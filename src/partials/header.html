@@ -1,5 +1,4 @@
 <header class="page-header--home">
-    <div class="genres"></div>
     </div>
     <div class="container">
         <div class="theme-switch">
@@ -37,7 +36,7 @@
             </nav>
         </div>
         <div class="form">
-            <button class="categories-button" data-action="open-categories">render ganre</button>
+            <button class="categories-button" data-action="open-categories">Categories</button>
             <form class="search-form" id="search-form">
                 <input type="text" name="query" autocomplete="off" placeholder="Search Movies" class="search-field"
                     id="name" />
@@ -52,6 +51,17 @@
         <div class="library__wrapper visually-hidden">
             <button class="btn-action watched active">watched</button>
             <button class="btn-action queue">queue</button>
+        </div>
+        
+<div class="genres-backdrop visually-hidden">
+    <div class="genres">
+        <button class="genres__button-close" type="button" data-action="close-genres">
+    <svg width="25" height="25" class="genres__icon">
+        <use href="./images/icons.svg#icon-close"></use>
+    </svg>
+</button>
+<div class="genre-wraper"></div>
+    </div>
         </div>
     </div>
 </header>
