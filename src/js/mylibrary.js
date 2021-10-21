@@ -73,6 +73,7 @@ function libraryRebder() {
   const localMass = JSON.parse(localStorage.getItem('watched'));
   localMass.forEach((e, i) => {
     // console.log(e.genres);
+    localMass[i].release_date = localMass[i].release_date.slice(0, 4);
     e.genres.forEach((er, ir) => {
       if (ir >= 3) {
         localMass[i].genres.pop();
@@ -101,6 +102,7 @@ function libraryQueueRebder() {
   const localMass = JSON.parse(localStorage.getItem('queue'));
   localMass.forEach((e, i) => {
     // console.log(e.genres);
+    localMass[i].release_date = localMass[i].release_date.slice(0, 4);
     e.genres.forEach((er, ir) => {
       if (ir >= 3) {
         localMass[i].genres.pop();

@@ -97,3 +97,13 @@
   background-image: url('../images/play-btn.svg');
   background-color: transparent;
 }
+
+.glide__arrow{
+  opacity: 0.5;
+    transition: var(--transition-function) var(--timing-function);
+
+
+  &:hover, &:focus {
+    opacity: 1;
+  }
+}
