@@ -90,6 +90,7 @@
   //display: flex;
   //opacity: 1;
   transform: translatey(0);
+  transition: transform var(--transition-function) var(--timing-function);
 }
 
 .overlay {
@@ -116,4 +117,9 @@
   outline: none;
   background-image: url('../images/play-btn.svg');
   background-color: transparent;
+}
+
+.btn-youtube-slider:hover {
+  transform: scale(1.5);
+  transition: transform var(--transition-function) var(--timing-function);
 }
