@@ -8,7 +8,7 @@
             {{#each this.genres}}
             <span class="gallery_label">{{this.name}}{{#unless @last}},{{/unless}}</span>
             {{/each}} |
-            <span class="gallery_label">{{release_date}}</span>
+            <span class="gallery_label">{{release_date}}</span><span class="label_rating">{{vote_average}}</span>
         </div>
     </li>
     {{/each}}
