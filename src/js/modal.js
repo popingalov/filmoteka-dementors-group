@@ -6,6 +6,8 @@ import { get } from 'jquery';
 const modalWindow = document.querySelector('.content');
 
 refs.gallery.addEventListener('click', filmClick);
+refs.watchedGallery.addEventListener('click', filmClick);
+refs.queueGallery.addEventListener('click', filmClick);
 refs.modal.addEventListener('click', closeModal);
 window.addEventListener('keydown', modalCloseByEsc);
 
@@ -71,7 +73,8 @@ function filmClick(e) {
           }
         }
         push();
-        localStorage.setItem('watched', JSON.stringify(itemParse));
+        const newT = itemParse.filter((v, i, a) => a.findIndex(t => t.id === v.id) === i);
+        localStorage.setItem('watched', JSON.stringify(newT));
       }
       const onClickBtnWatch = watchedBtn.addEventListener('click', local);
       // const onClickBtnWatch = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })
@@ -100,7 +103,8 @@ function filmClick(e) {
           }
         }
         push();
-        localStorage.setItem('queue', JSON.stringify(itemParse));
+        const newT = itemParse.filter((v, i, a) => a.findIndex(t => t.id === v.id) === i);
+        localStorage.setItem('queue', JSON.stringify(newT));
       }
       const onClickBtnWatch = queueBtn.addEventListener('click', local);
       // const queueBtn = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })

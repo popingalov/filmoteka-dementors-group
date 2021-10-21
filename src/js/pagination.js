@@ -1,7 +1,8 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import filmsApiProg from './apiService';
+import apiService from './apiService';
 import filmsRender from './filmsPagination';
+import refs from './refs';
 localStorage.setItem('page', JSON.stringify(1));
 const container = document.getElementById('tui-pagination-container');
 const pagination = new Pagination(container, {
@@ -21,9 +22,15 @@ function loadPage(currentPage) {
 
 function moveEvent() {
   pagination.on('afterMove', event => {
-    const currentPage = event.page;
+    let currentPage = event.page;
+    /*    localStorage.clear('page');
     localStorage.setItem('page', currentPage);
-    filmsRender.renderTrendingMovies(currentPage);
+    currentPage = localStorage.getItem('page'); */
+    console.log(currentPage);
+    refs.galleryList.innerHTML = '';
+    apiService.page = currentPage;
+    apiService.renderObserver();
+    /* filmsRender.renderTrendingMovies(currentPage); */
   });
 }
 
@@ -40,6 +47,6 @@ function up() {
 //onclick="return up()"  -  этот код нужно вставить в пагинацию кнопок, чтобы вверх при нажатии скролилось
 
 async function fetchTrending(currentPage) {
-  const response = await filmsApiProg.getTrend(currentPage);
+  const response = await apiService.getTrend(currentPage);
   return response;
 }

@@ -1,25 +1,37 @@
 import axios from 'axios';
-import refs from './refs.js'
-import tmp from '../templates/gallery-homepage.hbs'
+import refs from './refs.js';
+import tmp from '../templates/gallery-homepage.hbs';
 
 class filmsApiProg {
   constructor(key) {
     this.filmURL = 'https://api.themoviedb.org/3';
     this.key = key;
     this.searchQuery = '';
-    this.page = 1
-    this.search = `${this.filmURL}/trending/movie/day?api_key=${this.key}`
+    this.page = 1;
+    this.search = `${this.filmURL}/trending/movie/day?api_key=${this.key}`;
+    this.genreId = 1;
   }
-  async changeSearch() {
+  changeSearch() {
     this.search = `${this.filmURL}/search/movie?api_key=${this.key}&query=${this.searchQuery}`;
   }
+
+  saveganresId(id) {
+    this.genreId = id;
+    console.log(id);
+  }
+  changeUrlGanr() {
+    this.search = `${this.filmURL}/discover/movie?api_key=${this.key}&with_genres=${this.genreId}`;
+    console.log(this.search);
+  }
   async renderObserver() {
+    console.log(this.genreId, this.search);
     const massForRender = await axios.get(`${this.search}&page=${this.page}`);
+    console.log(this.genreId, this.search);
     const newMass = massForRender.data;
     const tryGenres = await this.getGenre();
     const genre = newMass.results;
     genre.forEach((e, i) => {
-          genre[i].release_date = genre[i].release_date.slice(0, 4)
+      genre[i].release_date = genre[i].release_date.slice(0, 4);
       e.genre_ids.forEach((er, ir) => {
         if (ir < 2) {
           genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
@@ -50,7 +62,9 @@ class filmsApiProg {
 
   async getTrend(page = 1) {
     try {
-      const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${page}`);
+      const filmesFox = await axios.get(
+        `${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${page}`,
+      );
       const trending = filmesFox.data;
       return trending;
     } catch (error) {
@@ -113,9 +127,11 @@ class filmsApiProg {
       console.log(error);
     }
   }
-async getTrendLoad() {
+  async getTrendLoad() {
     try {
-      const filmesFox = await axios.get(`${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${this.page}`);
+      const filmesFox = await axios.get(
+        `${this.filmURL}/trending/movie/day?api_key=${this.key}&page=${this.page}`,
+      );
       const trending = filmesFox.data;
       this.incrementPage();
       return trending;
@@ -128,26 +144,26 @@ async getTrendLoad() {
   }
 
   async startRenderPromis(mass) {
-  const massForRender = await mass;
+    const massForRender = await mass;
 
-  const tryGenres = await this.getGenre();
-  const genre = massForRender.results;
-  genre.forEach((e, i) => {
-    genre[i].release_date = genre[i].release_date.slice(0, 4)
-    e.genre_ids.forEach((er, ir) => {
-      if (ir < 2) {
-        genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
-        return;
-      }
-      if (ir == 2) {
-        genre[i].genre_ids[ir] = ` Other`;
-        return;
-      }
-      genre[i].genre_ids.pop();
+    const tryGenres = await this.getGenre();
+    const genre = massForRender.results;
+    genre.forEach((e, i) => {
+      genre[i].release_date = genre[i].release_date.slice(0, 4);
+      e.genre_ids.forEach((er, ir) => {
+        if (ir < 2) {
+          genre[i].genre_ids[ir] = ` ${tryGenres[er]}`;
+          return;
+        }
+        if (ir == 2) {
+          genre[i].genre_ids[ir] = ` Other`;
+          return;
+        }
+        genre[i].genre_ids.pop();
+      });
     });
-  });
 
-  refs.galleryList.insertAdjacentHTML('beforeend', tmp(massForRender.results));
+    refs.galleryList.insertAdjacentHTML('beforeend', tmp(massForRender.results));
   }
 }
 export default new filmsApiProg('7c9dd50606a07df965d51fc9621e1448');

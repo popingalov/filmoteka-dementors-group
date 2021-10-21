@@ -24,20 +24,11 @@ export default {
   closeTeamModalBtn: document.querySelector('.modal-close__btn'),
   modalTeam: document.querySelector('.backdrop'),
   nav: document.querySelector('.site-nav'),
-
   headerContainer: document.querySelector('.header-container'),
   categoriesButton: document.querySelector('[data-action="open-categories"]'),
   genresContainer: document.querySelector('.genres'),
   genresItem: document.querySelector('.genres-item'),
-//sliderContainer:document.querySelector('.swiper-wrapper');
-
-
-
-
-
-
-
-
+  //sliderContainer:document.querySelector('.swiper-wrapper');
 
   header: document.querySelector('.page-header--home'),
   //sliderContainer:document.querySelector('.swiper-wrapper');
@@ -49,5 +40,4 @@ export default {
   queueBtn: document.querySelector('.queue'),
   watchedGallery: document.querySelector('.watched-gallery'),
   queueGallery: document.querySelector('.queue-gallery'),
-
 };
