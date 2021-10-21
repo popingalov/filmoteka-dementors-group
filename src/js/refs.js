@@ -40,4 +40,7 @@ export default {
   queueBtn: document.querySelector('.queue'),
   watchedGallery: document.querySelector('.watched-gallery'),
   queueGallery: document.querySelector('.queue-gallery'),
+  genresBackdrop: document.querySelector('.genres-backdrop'),
+  genresCloseBtn: document.querySelector('[data-action="close-genres"]'),
+  genreWrapper:document.querySelector('.genre-wraper')
 };
