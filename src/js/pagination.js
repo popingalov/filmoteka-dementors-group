@@ -26,7 +26,6 @@ function moveEvent() {
     /*    localStorage.clear('page');
     localStorage.setItem('page', currentPage);
     currentPage = localStorage.getItem('page'); */
-    console.log(currentPage);
     refs.galleryList.innerHTML = '';
     apiService.page = currentPage;
     apiService.renderObserver();
