@@ -8,10 +8,11 @@
 
 */
 export default {
-  searchForm: document.querySelector('.search-form'),
+  searchForm: document.querySelector('.form'),
   searchInput: document.querySelector('.search-field'),
   gallery: document.querySelector('.gallery'),
   galleryList: document.querySelector('.gallery_list'),
+  genresList: document.querySelector('.genres-list'),
   //themeSwitch: document.querySelector('.theme-switch__control'),
   themeSwitch: document.querySelector('.theme-switch__control'),
   homeBtn: document.querySelector('.home__button'),
@@ -42,5 +43,6 @@ export default {
   queueGallery: document.querySelector('.queue-gallery'),
   genresBackdrop: document.querySelector('.genres-backdrop'),
   genresCloseBtn: document.querySelector('[data-action="close-genres"]'),
-  genreWrapper:document.querySelector('.genre-wraper')
+  genreWrapper: document.querySelector('.genres'),
+  /* genreWrapperr: document.querySelector('.genres-wraper'), */
 };

@@ -1,5 +1,4 @@
-
-.genres-backdrop{
+.genres-backdrop {
   z-index: 4;
   margin-left: auto;
   margin-right: auto;
@@ -14,7 +13,7 @@
   background-color: var(--backdrop-color);
   transition: opacity var(--transition-function) var(--timing-function);
 }
-.genres{
+.genres {
   position: relative;
   max-width: 520px;
   background-color: white;
@@ -23,8 +22,45 @@
   margin-right: auto;
   padding: 30px;
   border-radius: 5px;
+  .genres-list {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    .genres-item {
+      width: 140px;
+      border: 1px solid #9b9a9a;
+      border-radius: 5px;
+      background-color: white;
+      cursor: pointer;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.33;
+      text-transform: uppercase;
+      transition: transform var(--timing-function) var(--transition-function);
+      &:hover {
+        background-color: var(--color-accent);
+        color: white;
+        border: transparent;
+        transform: scale(1.1);
+      }
+    }
+  }
+  &.dark-theme {
+    background-color: black;
+    color: white;
+    .genres-item {
+      background-color: var(--backdrop-color);
+    }
+  }
+  &.light-theme {
+    background-color: var(--color-white);
+    color: black;
+  }
 }
-.genres__button-close{
+
+.genres__button-close {
   position: relative;
   top: -10px;
   left: 425px;
@@ -33,15 +69,14 @@
   border-radius: 2px;
   display: flex;
   transition: hover var(--timing-function) var(--transition-function);
-  &:hover{
-    border-color:  transparent;
+  &:hover {
+    border-color: transparent;
     background-color: var(--color-accent);
-    
   }
 }
 
-.genres__icon{
-  &:hover{
+.genres__icon {
+  &:hover {
     fill: white;
   }
 }
@@ -52,7 +87,7 @@
   height: 35px;
   padding-left: 5px;
   padding-right: 5px;
-margin-right: 50px;
+  margin-right: 50px;
   background-color: transparent;
   border: 1px solid white;
   cursor: pointer;
@@ -64,52 +99,21 @@ margin-right: 50px;
   line-height: 1.33;
   border-radius: 5px;
   transition: transform var(--timing-function) var(--transition-function);
-  &:hover{
+  &:hover {
     border: 1px solid var(--color-accent);
-    transform: scale(1.10)
+    transform: scale(1.1);
   }
 }
 
-
-
-.genres-list{
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
-  
-}
-
-.genres-item{
-  width: 140px;
-  border: 1px solid #9b9a9a;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-  text-transform: uppercase;
-  transition: transform var(--timing-function) var(--transition-function) ;
-  &:hover{
-    background-color: var(--color-accent);
-    color: white;
-    border: transparent;
-    transform: scale(1.10)
-  }
-  
-  
-}
-.genres-text{
+.genres-text {
   text-align: center;
   padding: 10px 5px;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.categories-button-active{
+.categories-button-active {
   background-color: var(--color-accent);
 }

@@ -9,10 +9,10 @@ refs.gallery.addEventListener('click', filmClick);
 refs.watchedGallery.addEventListener('click', filmClick);
 refs.queueGallery.addEventListener('click', filmClick);
 refs.modal.addEventListener('click', closeModal);
-window.addEventListener('keydown', modalCloseByEsc);
 
 function openModal() {
   refs.modal.classList.remove('is-hidden');
+  window.addEventListener('keydown', modalCloseByEsc);
 }
 
 // закрытие модалки
@@ -25,8 +25,9 @@ function closeModal(e) {
   }
 }
 function modalCloseByEsc(e) {
+  console.log('test');
   if (e.code === 'Escape') {
-    closeModal();
+    refs.modal.classList.add('is-hidden');
     window.removeEventListener('keydown', modalCloseByEsc);
   }
 }
@@ -98,7 +99,6 @@ function filmClick(e) {
 
         function push() {
           if (itemParse.indexOf(data) === -1) {
-            console.log(itemParse.indexOf(data));
             itemParse.push(data);
           }
         }
@@ -107,7 +107,6 @@ function filmClick(e) {
         localStorage.setItem('queue', JSON.stringify(newT));
       }
       const onClickBtnWatch = queueBtn.addEventListener('click', local);
-      // const queueBtn = watchedBtn.addEventListener('click', () => { localStorage.removeItem('watched') })
     });
   }
 }
